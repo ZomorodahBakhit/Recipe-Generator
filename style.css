@@ -302,6 +302,35 @@ header {
 .ingredients .swiper-button-prev:hover {
   color: var(--light-orange-color);
 }
+.ingredients-btn {
+  padding: 0.6rem 1rem;
+  background: var(--green-color);
+  color: var(--bg-color);
+  font-weight: 400;
+  border-radius: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 0.5rem;
+  width: 122.5px;
+  float: right; 
+  margin-right:277px;
+  margin-top: 20px; 
+}
+
+.ingredients-btn .bx {
+  padding: 4px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  border-radius: 1rem;
+  font-size: 20px;
+  margin: auto;
+}
+
+.ingredients-btn:hover {
+  background: var(--light-orange-color);
+  transition: 0.2s ease;
+}
 
 .recipes {
   max-width: 968px;
