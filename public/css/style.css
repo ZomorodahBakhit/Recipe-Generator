@@ -110,7 +110,7 @@ header {
   min-height: 640px;
   display: flex;
   align-items: center;
-  background: url(img/background.png);
+  background: url(/public/img/background.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -167,7 +167,7 @@ header {
   transition: 0.2s ease;
 }
 .swiper-button-next {
-  background: url(img/right-arrow.png);
+  background: url(/public/img/right-arrow.png);
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
@@ -177,7 +177,7 @@ header {
   display: none;
 }
 .swiper-button-prev {
-  background: url(img/left-arrow.png);
+  background: url(/public/img/left-arrow.png);
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
