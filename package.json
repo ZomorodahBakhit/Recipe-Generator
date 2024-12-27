@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "This holds all the node modules for YUMnTUM, the recipe generator.",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,6 +14,9 @@
   "author": "Zomorodah Bakhit",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.7.9",
+    "body-parser": "^1.20.3",
+    "ejs": "^3.1.10",
     "express": "^4.21.2"
   }
 }
