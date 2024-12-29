@@ -23,6 +23,7 @@ const config = {
     params: { 
         apiKey:API_Key,
         ingredients: "flour, apples, sugar",
+        number:20
         
         
     },

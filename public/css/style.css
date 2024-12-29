@@ -251,7 +251,15 @@ header {
   display: block;
 }
 
-.box1 {
+.box {
+  flex: 1 1 calc(33.33% - 40px); /* Three items per row with spacing */
+  max-width: 300px; /* Prevent items from growing too large */
+  box-sizing: border-box;
+  background: #fef4ea;
+}
+
+
+/* .box1 {
   background: #fef4ea;
 }
 
@@ -288,7 +296,7 @@ header {
 
 .box10 {
   background: #f7f6d7;
-}
+} */
 
 /* Swiper Navigation */
 .ingredients .swiper-button-next,
@@ -337,34 +345,43 @@ header {
   margin-left: auto;
   margin-right: auto;
 }
-.recipes-conatiner {
+/* .recipes-conatiner {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, auto));
   gap: 1.5rem;
   margin-top: 2rem;
+} */
+
+
+.recipes-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping to next row */
+  gap: 20px;
+  justify-content: center; /* Center all items */
+  
 }
-.recipes-conatiner .box {
+.recipes-container .box {
   padding: 20px;
   box-shadow: 1px 2px 11px 4px rgb(14 55 54 / 15%);
   border-radius: 0.5rem;
   position: relative;
 }
-.recipes-conatiner .box img {
+.recipes-container .box img {
   width: 100%;
   height: 200px;
   object-fit: contain;
   object-position: center;
 }
-.recipes-conatiner .box span {
+.recipes-container .box span {
   font-weight: 500;
   font-size: 13px;
 }
-.recipes-conatiner .box h2 {
+.recipes-container .box h2 {
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 30px; /* Adds space below the h2 */
 }
-.recipes-conatiner .box .recipes-btn {
+.recipes-container .box .recipes-btn {
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -385,20 +402,20 @@ header {
 }
 
 
-.recipes-conatiner .box .recipe-btn:hover {
+.recipes-container .box .recipe-btn:hover {
   background: var(--light-orange-color);
   color: var(--green-color);
 }
 
 
-.recipes-conatiner .box .bx-heart {
+.recipes-container .box .bx-heart {
   position: absolute;
   top: 1rem;
   right: 1rem;
   font-size: 20px;
   color: var(--light-orange-color);
 }
-.recipes-conatiner .box .popular {
+.recipes-container .box .popular {
   position: absolute;
   top: 1rem;
   left: 0;
@@ -622,7 +639,7 @@ header {
   .btn {
     padding: 0.6rem 1.2rem;
   }
-  .recipes-conatiner {
+  .recipes-container {
     grid-template-columns: repeat(auto-fit, minmax(244px, auto));
   }
 }
