@@ -424,6 +424,37 @@ header {
   padding: 4px 18px;
   clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 0 100%, 0% 50%, 0 0);
 }
+
+
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.pagination-btn {
+  padding: 10px 15px;
+  border: 1px solid var(--green-color);
+  border-radius: 5px;
+  background-color: var(--bg-color);
+  color: var(--green-color);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.pagination-btn:hover {
+  background-color: var(--green-color);
+  color: var(--bg-color);
+}
+
+.pagination-btn.active {
+  background-color: var(--light-orange-color);
+  color: var(--bg-color);
+  font-weight: bold;
+}
+
 .about {
   max-width: 968px;
   margin-left: auto;
