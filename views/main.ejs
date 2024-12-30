@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,14 +9,13 @@
     <!-- Link To CSS -->
     <link rel="stylesheet" href="/public/css/style.css">
     <!-- Box Icons -->
-    <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-  <!-- Link Swiper's CSS -->
-  <link
-  rel="stylesheet"
-  href="https://unpkg.com/swiper/swiper-bundle.min.css"
-/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!--Link to bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
     <!-- Navbar -->
     <header>
@@ -30,125 +30,303 @@
             <li><a href="#recipes">Recipes</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#users">Users</a></li>
-            
+
         </ul>
         <!-- Profile -->
         <div class="profile">
             <img src="/public/img/Users/profile.jpg" alt="">
             <span>Lila Al Fayed</span>
-            <i class='bx bx-caret-down' ></i>
+            <i class='bx bx-caret-down'></i>
         </div>
     </header>
     <!-- Home -->
-    <section class="home swiper" id="home">
-        <div class="swiper-wrapper">
-            <!-- Slide 1 -->
-            <div class="swiper-slide container">
-                <div class="home-text">
-                    <span>BAKR FOR BAKING AND ALL TYPES OF RECIPES</span>
-                    <h1>Choose a Recipe <br> the best healthy <br>Recipes Available</h1>
-                </div>
-                <img src="/public/img/home/home1.png" alt="">
+    <section id="home">
 
-            </div>
-            <!-- Slide 2 -->
-            <div class="swiper-slide container">
-                <div class="home-text">
-                    <span>BAKR FOR BAKING AND ALL TYPES OF RECIPES</span>
-                    <h1>Choose a Recipe <br> the best healthy <br>Recipes Available</h1>
+        <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel"
+            style="background-image: url(img/background.png);">
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="container">
+                        <div class="home-text">
+                            <span>BAKR FOR BAKING AND ALL TYPES OF RECIPES</span>
+                            <h1>Choose a Recipe <br> the best healthy <br>Recipes Available</h1>
+                        </div>
+                        <img src="img/home/home1.png" alt="">
+                    </div>
                 </div>
-                <img src="/public/img/home/home2.png" alt="">
-
-            </div>
-            <!-- Slide 3 -->
-            <div class="swiper-slide container">
-                <div class="home-text">
-                    <span>BAKR FOR BAKING AND ALL TYPES OF RECIPES</span>
-                    <h1>Choose a Recipe <br> the best healthy <br>Recipes Available</h1>
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="home-text">
+                            <span>BAKR FOR BAKING AND ALL TYPES OF RECIPES</span>
+                            <h1>Choose a Recipe <br> the best healthy <br>Recipes Available</h1>
+                        </div>
+                        <img src="img/home/home2.png" alt="">
+                    </div>
                 </div>
-                <img src="/public/img/home/home3.png" alt="">
-
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="home-text">
+                            <span>BAKR FOR BAKING AND ALL TYPES OF RECIPES</span>
+                            <h1>Choose a Recipe <br> the best healthy <br>Recipes Available</h1>
+                        </div>
+                        <img src="img/home/home3.png" alt="">
+                    </div>
+                </div>
             </div>
-           
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
 
     </section>
     <!-- ingredients -->
-<section class="ingredients swiper" id="ingredients">
-    <div class="heading">
-      <h1>Browse Your  <br><span>Ingredients</span></h1>
-      <a href="#" class="btn">See All<i class='bx bx-right-arrow-alt'></i></a>
+    <section class="ingredients swiper" id="ingredients">
+        <div class="heading">
+            <h1>Browse Your <br><span>Ingredients</span></h1>
+            <a href="#" class="btn side-btn">See All<i class='bx bx-right-arrow-alt'></i></a>
+        </div>
+    </section>
+
+    <!-- Ingredient Carousel section -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8" id="carouselStyle1">
+
+                <!-- Category Carousel -->
+                <div id="categoryCarousel" class="carousel slide category-carousel mt-3 mb-3" data-bs-ride="carousel"
+                    data-bs-interval="10000">
+                    <div class="carousel-inner">
+                        <!-- Slide 1 -->
+                        <div class="carousel-item active">
+                            <div class="d-flex justify-content-around">
+                                <button class="btn category-btn" data-target="fruits">Fruits</button>
+                                <button class="btn category-btn" data-target="vegetables">Vegetables</button>
+                                <button class="btn category-btn" data-target="dairy">Dairy</button>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="carousel-item">
+                            <div class="d-flex justify-content-around">
+                                <button class="btn category-btn" data-target="grainsAndLegumes">Grains &
+                                    Legumes</button>
+                                <button class="btn category-btn" data-target="meatAndSeafood">Meat &
+                                    Seafood</button>
+                                <button class="btn category-btn" data-target="spicesAndSeasonings">Spices &
+                                    Seasonings</button>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="carousel-item">
+                            <div class="d-flex justify-content-around">
+                                <button class="btn category-btn" data-target="oilsAndCondiments">Oils and
+                                    Condiments</button>
+                                <button class="btn category-btn" data-target="other">Other</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#categoryCarousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#categoryCarousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
     </div>
-    <!-- Swiper Container -->
-    <div class="swiper-wrapper">
-      <!-- Slide 1 -->
-      <div class="swiper-slide box box1">
-        <img src="/public/img/ingredients/Eggs, milk, yogurt, rice and flour/milk.png" alt="milk">
-        <h2>Milk</h2>
-      </div>
-      <!-- Slide 2 -->
-      <div class="swiper-slide box box2">
-        <img src="/public/img/ingredients/Eggs, milk, yogurt, rice and flour/yogurt.png" alt="yogurt">
-        <h2>Yogurt</h2>
-      </div>
-      <!-- Slide 3 -->
-      <div class="swiper-slide box box3">
-        <img src="/public/img/ingredients/Eggs, milk, yogurt, rice and flour/eggs.png" alt="eggs">
-        <h2>Eggs</h2>
-      </div>
-      <!-- Slide 4 -->
-      <div class="swiper-slide box box4">
-        <img src="/public/img/ingredients/Eggs, milk, yogurt, rice and flour/flour.png" alt="flour">
-        <h2>Flour</h2>
-      </div>
-      <!-- Slide 5 -->
-      <div class="swiper-slide box box5">
-        <img src="/public/img/ingredients/Eggs, milk, yogurt, rice and flour/rice.png" alt="rice">
-        <h2>Rice</h2>
-      </div>
-        <!-- Slide 6 -->
-      <div class="swiper-slide box box6">
-        <img src="/public/img/ingredients/Fruits/banana.png" alt="banana">
-        <h2>Bananas</h2>
-      </div>
-      <!-- Slide 7 -->
-      <div class="swiper-slide box box7">
-        <img src="/public/img/ingredients/Fruits/oranges.png" alt="oranges">
-        <h2>Oranges</h2>
-      </div>
-      <!-- Slide 8 -->
-      <div class="swiper-slide box box8">
-        <img src="/public/img/ingredients/Fruits/strawberries.png" alt="strawberries">
-        <h2>Strawberries</h2>
-      </div>
-      <!-- Slide 9 -->
-      <div class="swiper-slide box box9">
-        <img src="/public/img/ingredients/Fruits/apple.png" alt="apple">
-        <h2>Apples</h2>
-      </div>
-      <!-- Slide 10 -->
-      <div class="swiper-slide box box10">
-        <img src="/public/img/ingredients/Fruits/tomato.png" alt="tomato">
-        <h2>Tomatoes</h2>
-      </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8" id="carouselStyle2">
+
+                <!-- Ingredient Carousel -->
+                <div id="ingredientCarousel" class="carousel slide mt-3 ingredient-carousel" data-bs-ride="carousel"
+                    data-bs-interval="10000">
+                    <div class="carousel-inner">
+                        <!-- Fruits -->
+                        <div class="carousel-item active" data-category="fruits">
+                            <div class="d-flex justify-content-center align-items-center flex-wrap w-100">
+                                <button class="btn ingredient-btn" data-ingredient="apple">Apple</button>
+                                <button class="btn ingredient-btn" data-ingredient="orange">Orange</button>
+                                <button class="btn ingredient-btn" data-ingredient="banana">Banana</button>
+                                <button class="btn ingredient-btn" data-ingredient="pineapple">Pineapple</button>
+                                <button class="btn ingredient-btn" data-ingredient="lemon">Lemon</button>
+                                <button class="btn ingredient-btn" data-ingredient="lime">Lime</button>
+                                <button class="btn ingredient-btn" data-ingredient="strawberry">Strawberry</button>
+                                <button class="btn ingredient-btn" data-ingredient="blueberry">Blueberry</button>
+                                <button class="btn ingredient-btn" data-ingredient="avocado">Avocado</button>
+                            </div>
+
+                        </div>
+                        <!-- Vegetables -->
+                        <div class="carousel-item" data-category="vegetables">
+                            <div class="d-flex justify-content-center align-items-center flex-wrap w-100">
+                                <button class="btn ingredient-btn" data-ingredient="carrots">Carrots</button>
+                                <button class="btn ingredient-btn" data-ingredient="broccoli">Broccoli</button>
+                                <button class="btn ingredient-btn" data-ingredient="spinach">Spinach</button>
+                                <button class="btn ingredient-btn" data-ingredient="lettuce">Lettuce</button>
+                                <button class="btn ingredient-btn" data-ingredient="mushroom">Mushroom</button>
+                                <button class="btn ingredient-btn" data-ingredient="zucchini">Zucchini</button>
+                                <button class="btn ingredient-btn" data-ingredient="greenBellPepper">Green Bell
+                                    Pepper</button>
+                                <button class="btn ingredient-btn" data-ingredient="redBellPepper">Red Bell
+                                    Pepper</button>
+                                <button class="btn ingredient-btn" data-ingredient="yellowBellPepper">Yellow Bell
+                                    Pepper</button>
+                                <button class="btn ingredient-btn" data-ingredient="garlic">Garlic</button>
+                                <button class="btn ingredient-btn" data-ingredient="onion">Onion</button>
+                                <button class="btn ingredient-btn" data-ingredient="tomato">Tomato</button>
+                            </div>
+                        </div>
+                        <!-- Dairy -->
+                        <div class="carousel-item" data-category="dairy">
+                            <div class="d-flex justify-content-center align-items-center flex-wrap w-100">
+                                <button class="btn ingredient-btn" data-ingredient="milk">Milk</button>
+                                <button class="btn ingredient-btn" data-ingredient="cheese">Cheese</button>
+                                <button class="btn ingredient-btn" data-ingredient="yogurt">Yogurt</button>
+                                <button class="btn ingredient-btn" data-ingredient="butter">Butter</button>
+                                <button class="btn ingredient-btn" data-ingredient="cream">Cream</button>
+                                <button class="btn ingredient-btn" data-ingredient="sourCream">Sour Cream</button>
+                            </div>
+                        </div>
+                        <!-- Grains and Legumes-->
+                        <div class="carousel-item" data-category="grainsAndLegumes">
+                            <div class="d-flex justify-content-center align-items-center flex-wrap w-100">
+                                <button class="btn ingredient-btn" data-ingredient="pasta">Pasta</button>
+                                <button class="btn ingredient-btn" data-ingredient="rice">Rice</button>
+                                <button class="btn ingredient-btn" data-ingredient="oats">Oats</button>
+                                <button class="btn ingredient-btn" data-ingredient="quinoa">Quinoa</button>
+                                <button class="btn ingredient-btn" data-ingredient="bread">Bread</button>
+                                <button class="btn ingredient-btn" data-ingredient="lentils">Lentils</button>
+                                <button class="btn ingredient-btn" data-ingredient="chickpeas">Chickpeas</button>
+                                <button class="btn ingredient-btn" data-ingredient="beans">Beans</button>
+
+                            </div>
+                        </div>
+
+                        <!--Meat and Seafood-->
+                        <div class="carousel-item" data-category="meatAndSeafood">
+                            <div class="d-flex justify-content-center align-items-center flex-wrap w-100">
+                                <button class="btn ingredient-btn" data-ingredient="chicken">Chicken</button>
+                                <button class="btn ingredient-btn" data-ingredient="steak">Steak</button>
+                                <button class="btn ingredient-btn" data-ingredient="groundBeef">Ground Beef</button>
+                                <button class="btn ingredient-btn" data-ingredient="pork">Pork</button>
+                                <button class="btn ingredient-btn" data-ingredient="salmon">Salmon</button>
+                                <button class="btn ingredient-btn" data-ingredient="cod">Cod</button>
+                                <button class="btn ingredient-btn" data-ingredient="tuna">Tuna</button>
+                                <button class="btn ingredient-btn" data-ingredient="shrimp">Shrimp</button>
+                                <button class="btn ingredient-btn" data-ingredient="bacon">Bacon</button>
+                                <button class="btn ingredient-btn" data-ingredient="turkey">Turkey</button>
+
+                            </div>
+                        </div>
+
+                        <!--Spices and Seasonings-->
+                        <div class="carousel-item" data-category="spicesAndSeasonings">
+                            <div class="d-flex justify-content-center align-items-center flex-wrap w-100">
+                                <button class="btn ingredient-btn" data-ingredient="paprika">Paprika</button>
+                                <button class="btn ingredient-btn" data-ingredient="cumin">Cumin</button>
+                                <button class="btn ingredient-btn" data-ingredient="oregano">Oregano</button>
+                                <button class="btn ingredient-btn" data-ingredient="basil">Basil</button>
+                                <button class="btn ingredient-btn" data-ingredient="thyme">Thyme</button>
+                                <button class="btn ingredient-btn" data-ingredient="cinnamon">Cinnamon</button>
+                                <button class="btn ingredient-btn" data-ingredient="chilliPowder">Chilli
+                                    powder</button>
+                            </div>
+                        </div>
+
+                        <!--Oil and Condiments-->
+                        <div class="carousel-item" data-category="oilsAndCondiments">
+                            <div class="d-flex justify-content-center align-items-center flex-wrap w-100">
+                                <button class="btn ingredient-btn" data-ingredient="oliveOil">Olive Oil</button>
+                                <button class="btn ingredient-btn" data-ingredient="vegetableOil">Vegetable
+                                    Oil</button>
+                                <button class="btn ingredient-btn" data-ingredient="soySauce">Soy Sauce</button>
+                                <button class="btn ingredient-btn" data-ingredient="balsamicVinegar">Balsamic
+                                    Vinegar</button>
+                                <button class="btn ingredient-btn" data-ingredient="appleVinegar">Apple
+                                    Vinegar</button>
+                                <button class="btn ingredient-btn" data-ingredient="ciderVinegar">Cider
+                                    Vinegar</button>
+                                <button class="btn ingredient-btn" data-ingredient="whiteVinegar">White
+                                    Vinegar</button>
+                                <button class="btn ingredient-btn" data-ingredient="mustard">Mustard</button>
+                                <button class="btn ingredient-btn" data-ingredient="ketchup">Ketchup</button>
+                                <button class="btn ingredient-btn" data-ingredient="mayonniase">Mayonnaise</button>
+                            </div>
+                        </div>
+
+                        <!--Other-->
+                        <div class="carousel-item" data-category="other">
+                            <div class="d-flex justify-content-center align-items-center flex-wrap w-100">
+                                <button class="btn ingredient-btn" data-ingredient="eggs">Eggs</button>
+                                <button class="btn ingredient-btn" data-ingredient="bakingPowder">Baking
+                                    Powder</button>
+                                <button class="btn ingredient-btn" data-ingredient="bakingSoda">Baking Soda</button>
+                                <button class="btn ingredient-btn" data-ingredient="honey">Honey</button>
+                                <button class="btn ingredient-btn" data-ingredient="darkChocolate">Dark
+                                    Chocolate</button>
+                                <button class="btn ingredient-btn" data-ingredient="milkChocolate">Milk
+                                    Chocolate</button>
+                                <button class="btn ingredient-btn" data-ingredient="chocolateChips">Chocolate
+                                    Chips</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#ingredientCarousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#ingredientCarousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-sm-2"></div>
     </div>
-    <!-- Swiper Navigation -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  </section>
-      <!--Submit Button-->
-    <div class="see-all-btn">
-        <a href="#" class="btn ingredients-btn">Submit<i class='bx bx-right-arrow-alt'></i></a>
-    </div>
-</section>
-  
+
+    <!-- Form for submitting selected ingredients -->
+    <form id="ingredientForm" action="/submit" method="POST" style="display: none;">
+        <input type="hidden" name="selectedIngredients" id="selectedIngredients">
+    </form>
+
+    <!--Submit Button-->
+    <section>
+        <div class="see-all-btn">
+            <button type="button" class="btn side-btn" id="submitButton">Submit<i
+                    class='bx bx-right-arrow-alt'></i></button>
+        </div>
+    </section>
+
+
     <!-- recipes -->
     <section class="recipes" id="recipes">
         <div class="heading">
             <h1>Our Popular <br><span>recipes</h1>
-                <a href="#" class="btn">See All<i class='bx bx-right-arrow-alt' ></i></a>
+            <a href="#" class="btn">See All<i class='bx bx-right-arrow-alt'></i></a>
 
         </div>
         <!-- recipes Content -->
@@ -159,8 +337,8 @@
                 <span>Breakfast, Lunch, Dinner</span>
                 <h2>Organic Salad with eggs 250g</h2>
                 <a href="#" class="recipes-btn">Get Recipe</a>
-                <i class='bx bx-heart' ></i>
-                <span class="popular">popular item  </span>
+                <i class='bx bx-heart'></i>
+                <span class="popular">popular item </span>
             </div>
             <!-- Box 2 -->
             <div class="box">
@@ -168,8 +346,8 @@
                 <span>Lunch, Dinner</span>
                 <h2>Chicken Noodle Soup 250g</h2>
                 <a href="#" class="recipes-btn">Get Recipe</a>
-                <i class='bx bx-heart' ></i>
-                <span class="popular">popular item  </span>
+                <i class='bx bx-heart'></i>
+                <span class="popular">popular item </span>
             </div>
             <!-- Box 3 -->
             <div class="box">
@@ -177,8 +355,8 @@
                 <span>Lunch, Dinner</span>
                 <h2>Meat Burger 250g</h2>
                 <a href="#" class="recipes-btn">Get Recipe</a>
-                <i class='bx bx-heart' ></i>
-                <span class="popular">popular item  </span>
+                <i class='bx bx-heart'></i>
+                <span class="popular">popular item </span>
             </div>
             <!-- Box 4 -->
             <div class="box">
@@ -186,8 +364,8 @@
                 <span>Breakfast,Snack, Dinner</span>
                 <h2>Pancakes with Fruits 250g</h2>
                 <a href="#" class="recipes-btn">Get Recipe</a>
-                <i class='bx bx-heart' ></i>
-                <span class="popular">popular item  </span>
+                <i class='bx bx-heart'></i>
+                <span class="popular">popular item </span>
             </div>
             <!-- Box 5 -->
             <div class="box">
@@ -195,8 +373,8 @@
                 <span>Lunch, Dinner</span>
                 <h2>Tomato Sauce Spagetti 250g</h2>
                 <a href="#" class="recipes-btn">Get Recipe</a>
-                <i class='bx bx-heart' ></i>
-                <span class="popular">popular item  </span>
+                <i class='bx bx-heart'></i>
+                <span class="popular">popular item </span>
             </div>
             <!-- Box 6 -->
             <div class="box">
@@ -204,7 +382,7 @@
                 <span>Snack, Dessert</span>
                 <h2>Strawberry Rose Pie 250g</h2>
                 <a href="#" class="recipes-btn">Get Recipe</a>
-                <i class='bx bx-heart' ></i>
+                <i class='bx bx-heart'></i>
                 <span class="popular">Popular item</span>
             </div>
         </div>
@@ -214,8 +392,11 @@
         <img src="/public/img/About us/about1.png" alt="">
         <div class="about-text">
             <span>About Us</span>
-            <p>Welcome to BAKR, we understand the frustration of having a limited pantry or not knowing what to cook with the ingredients you already have. That's why we’ve built an innovative recipe generator that lets you select the ingredients you have on hand, and instantly provides you with a variety of mouthwatering recipe suggestions. No more wasting time searching through countless recipe books or websites!</p>
-            <a href="#" class="btn">Learn More<i class='bx bx-right-arrow-alt' ></i></a>
+            <p>Welcome to BAKR, we understand the frustration of having a limited pantry or not knowing what to cook
+                with the ingredients you already have. That's why we’ve built an innovative recipe generator that lets
+                you select the ingredients you have on hand, and instantly provides you with a variety of mouthwatering
+                recipe suggestions. No more wasting time searching through countless recipe books or websites!</p>
+            <a href="#" class="btn side-btn">Learn More<i class='bx bx-right-arrow-alt'></i></a>
         </div>
     </section>
     <!-- users -->
@@ -225,47 +406,51 @@
         <div class="users-container">
             <!-- Review 1 -->
             <div class="box">
-                <i class='bx bxs-quote-alt-left' ></i>
+                <i class='bx bxs-quote-alt-left'></i>
                 <div class="stars">
-                    <i class='bx bxs-star' ></i>
-                    <i class='bx bxs-star' ></i>
-                    <i class='bx bxs-star' ></i>
-                    <i class='bx bxs-star' ></i>
-                    <i class='bx bxs-star-half' ></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
                 </div>
-                <p>"I absolutely love how easy it is to find recipes based on the ingredients I have at home! The website is super user-friendly and saves me so much time when I’m in a pinch."</p>
+                <p>"I absolutely love how easy it is to find recipes based on the ingredients I have at home! The
+                    website is super user-friendly and saves me so much time when I’m in a pinch."</p>
                 <div class="review-profile">
                     <img src="/public/img/Users/user1.jpg" alt="">
                     <h3>Jisoo Kim</h3>
                 </div>
             </div>
-              <!-- Review 2-->
-              <div class="box">
-                <i class='bx bxs-quote-alt-left' ></i>
+            <!-- Review 2-->
+            <div class="box">
+                <i class='bx bxs-quote-alt-left'></i>
                 <div class="stars">
-                    <i class='bx bxs-star' ></i>
-                    <i class='bx bxs-star' ></i>
-                    <i class='bx bxs-star' ></i>
-                    <i class='bx bxs-star' ></i>
-                    <i class='bx bxs-star-half' ></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
                 </div>
-                <p>"The variety of recipes is amazing! Whether I’m craving something quick or looking to experiment with new flavors, this site has it all. I love that I can choose ingredients and instantly get suggestions."</p>
+                <p>"The variety of recipes is amazing! Whether I’m craving something quick or looking to experiment with
+                    new flavors, this site has it all. I love that I can choose ingredients and instantly get
+                    suggestions."</p>
                 <div class="review-profile">
                     <img src="/public/img/Users/user2.jpg" alt="">
                     <h3>Liam Anderson</h3>
                 </div>
             </div>
-              <!-- Review 3 -->
-              <div class="box">
-                <i class='bx bxs-quote-alt-left' ></i>
+            <!-- Review 3 -->
+            <div class="box">
+                <i class='bx bxs-quote-alt-left'></i>
                 <div class="stars">
-                    <i class='bx bxs-star' ></i>
-                    <i class='bx bxs-star' ></i>
-                    <i class='bx bxs-star' ></i>
-                    <i class='bx bxs-star' ></i>
-                    <i class='bx bxs-star-half' ></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
                 </div>
-                <p>"This recipe generator has been a lifesaver! It makes cooking fun and easy by offering a variety of recipes based on what I have at home. It’s my go-to tool for meal inspiration every day!"</p>
+                <p>"This recipe generator has been a lifesaver! It makes cooking fun and easy by offering a variety of
+                    recipes based on what I have at home. It’s my go-to tool for meal inspiration every day!"</p>
                 <div class="review-profile">
                     <img src="/public/img/Users/user3.jpg" alt="">
                     <h3>Aaliyah Johnson</h3>
@@ -279,10 +464,10 @@
             <a href="#" class="logo"><i class='bx bxs-bowl-rice'></i>BAKR</a>
             <p>Bilgi University, Emniyettepe, Kazım Karabekir St. No: 2/13, 34060 Eyüpsultan/İstanbul </p>
             <div class="social">
-                <a href="#"><i class='bx bxl-facebook' ></i></a>
-                <a href="#"><i class='bx bxl-twitter' ></i></a>
-                <a href="#"><i class='bx bxl-instagram' ></i></a>
-                <a href="#"><i class='bx bxl-youtube' ></i></a>
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+                <a href="#"><i class='bx bxl-youtube'></i></a>
             </div>
         </div>
         <div class="footer-box">
@@ -303,13 +488,106 @@
             <h2>Newsletter</h2>
             <p>Subscribe to our <br>Email Newsletter</p>
             <form action="">
-                <i class='bx bxs-envelope' ></i>
+                <i class='bx bxs-envelope'></i>
                 <input type="email" name="" id="" placeholder="Enter Your Email">
-                <i class='bx bx-arrow-back bx-rotate-180' ></i>
+                <i class='bx bx-arrow-back bx-rotate-180'></i>
 
             </form>
         </div>
     </section>
+
+    <script>
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const categoryCarousel = document.querySelector('#categoryCarousel');
+        const ingredientCarousel = document.querySelector('#ingredientCarousel');
+
+        let isSyncing = false;
+
+        // Synchronize carousels when a category button is clicked
+        categoryButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const targetCategory = button.getAttribute('data-target');
+                const items = ingredientCarousel.querySelectorAll('.carousel-item');
+
+                items.forEach((item, index) => {
+                    if (item.getAttribute('data-category') === targetCategory) {
+                        const bsCarousel = bootstrap.Carousel.getOrCreateInstance(ingredientCarousel);
+                        bsCarousel.to(index);
+                    }
+                });
+            });
+        });
+
+        // Synchronize category and ingredient carousels during manual sliding
+        categoryCarousel.addEventListener('slide.bs.carousel', (event) => {
+            if (isSyncing) return;
+            isSyncing = true;
+
+            const targetIndex = event.to;
+            const targetCategory = categoryCarousel.querySelectorAll('.carousel-item')[targetIndex]
+                .querySelector('.category-btn').getAttribute('data-target');
+
+            const items = ingredientCarousel.querySelectorAll('.carousel-item');
+            items.forEach((item, index) => {
+                if (item.getAttribute('data-category') === targetCategory) {
+                    const bsCarousel = bootstrap.Carousel.getOrCreateInstance(ingredientCarousel);
+                    bsCarousel.to(index);
+                }
+            });
+
+            isSyncing = false;
+        });
+
+        ingredientCarousel.addEventListener('slide.bs.carousel', (event) => {
+            if (isSyncing) return;
+            isSyncing = true;
+
+            const targetIndex = event.to;
+            const targetCategory = ingredientCarousel.querySelectorAll('.carousel-item')[targetIndex].getAttribute('data-category');
+
+            const items = categoryCarousel.querySelectorAll('.carousel-item');
+            items.forEach((item, index) => {
+                if (item.querySelector('.category-btn').getAttribute('data-target') === targetCategory) {
+                    const bsCarousel = bootstrap.Carousel.getOrCreateInstance(categoryCarousel);
+                    bsCarousel.to(index);
+                }
+            });
+
+            isSyncing = false;
+        });
+
+        // Array to store selected ingredients
+        let selectedIngredients = [];
+
+        // Handle ingredient button click
+        document.querySelectorAll('.ingredient-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const ingredient = this.getAttribute('data-ingredient');
+
+                // Add ingredient to the array if not already present
+                if (!selectedIngredients.includes(ingredient)) {
+                    selectedIngredients.push(ingredient);
+
+                    // Update the selected ingredient list (optional)
+                    const ingredientList = document.getElementById('ingredientList');
+                    const listItem = document.createElement('li');
+                    listItem.textContent = ingredient;
+                    listItem.classList.add('list-group-item');
+                    ingredientList.appendChild(listItem);
+                }
+            });
+        });
+
+        // Handle form submission
+        document.getElementById('submitButton').addEventListener('click', function () {
+            // Update the hidden input with selected ingredients as a comma-separated string
+            document.getElementById('selectedIngredients').value = selectedIngredients.join(',');
+
+            // Submit the form
+            document.getElementById('ingredientForm').submit();
+        });
+
+    </script>
     <!-- Copyright -->
     <div class="copyright">
         <p>&#169; BAKR All Rights Reserved.</p>
@@ -320,5 +598,9 @@
 
     <!-- Link To JS -->
     <script src="/public/js/main.js"></script>
+
+     <!--Link to bootstrap JS-->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

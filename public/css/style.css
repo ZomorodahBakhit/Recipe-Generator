@@ -198,6 +198,137 @@ header {
 .heading span {
   color: var(--green-color);
 }
+
+/* Styling for the category carousel and ingredient carousel */
+#carouselStyle1 {
+  background-color: #FEF4EA;
+  border-radius: 1.5rem;
+}
+
+#carouselStyle2 {
+  background-color: #e9f4e3;
+  border-radius: 1.5rem;
+}
+
+.ingredient-carousel .carousel-inner {
+
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 10px;
+}
+
+.ingredient-carousel .carousel-item {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.ingredient-carousel .ingredient-btn {
+  margin: 10px;
+  min-width: 135px;
+  max-width: 185px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px 20px;
+  flex: 1 1 auto;
+  background-color: #3cb815;
+  color: white;
+  border-radius: 5rem;
+}
+
+.ingredient-carousel .ingredient-btn:hover {
+  color: white;
+  background-color: #ff7e00;
+}
+
+.category-carousel .category-btn {
+  background-color: #FEF4EA;
+  border-radius: 5rem;
+  border: solid black 1px;
+  min-width: 100px;
+}
+
+.category-carousel .category-btn:hover {
+  background-color: white;
+  border: solid black 1px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  border-radius: 50%;
+  z-index: 10;
+  padding: 10px;
+
+}
+
+
+/* Position arrows to avoid overlap with content */
+.carousel-control-prev {
+  left: 10px;
+}
+
+.carousel-control-next {
+  right: 10px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(32%) sepia(85%) saturate(741%) hue-rotate(320deg) brightness(93%) contrast(101%);
+  border-radius: 50%;
+  margin-left: 2rem;
+  z-index: 0;
+}
+
+/* Styling submit button */
+
+.see-all-btn {
+  margin-top: -50px;
+  display: flex;
+  justify-content: end;
+  padding-right: 279px;
+
+}
+
+/* Fixing styling for See All and Learn More buttons  */
+
+.side-btn.btn {
+  color: white;
+  background-color: #3cb815;
+  border-radius: 5rem;
+}
+
+.side-btn.btn:hover {
+  color: white;
+  background-color: #ff7e00;
+}
+
+.bx-right-arrow-alt.bx {
+  margin-left: 10px;
+}
+
+/* Responsiveness for ingredient carousel */
+
+@media (max-width: 768px) {
+  .ingredient-carousel .btn {
+    flex: 1 1 45%;
+    /* 2 buttons per row on medium screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .ingredient-carousel .btn {
+    flex: 1 1 100%;
+    /* 1 button per row on small screens */
+  }
+}
+
+
 /* Swiper ingredients Styling */
 .ingredients {
   max-width: 968px;
@@ -333,6 +464,7 @@ header {
 }
 
 .recipes {
+  margin-top: -70px;
   max-width: 968px;
   margin-left: auto;
   margin-right: auto;
