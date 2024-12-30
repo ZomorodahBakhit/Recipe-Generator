@@ -2,7 +2,10 @@
 var swiper = new Swiper(".home", {
   spaceBetween: 30,
   centeredSlides: true,
-  
+  autoplay: {
+    delay: 4000, // Time between slides in milliseconds (e.g., 3000ms = 3 seconds)
+    disableOnInteraction: false, // Keeps autoplay running even after user interaction
+  },
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
