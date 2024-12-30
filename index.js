@@ -20,6 +20,7 @@ const API_KEY = process.env.API_KEY;
 
 const PEXELS_API_URL = "https://api.pexels.com/v1/search";
 const PEXELS_API_KEY = process.env.PEXELS_API_KEY;
+const file = "main-test.ejs";
 
 // Configuration objects
 const config = {
@@ -128,7 +129,7 @@ app.get("/submit", async (req, res) => {
     const { recipesOnPage, totalPages } = paginateData(enrichedRecipes, page, recipesPerPage);
 
     // Render the main-test-test.ejs template
-    res.render("main-test.ejs", {
+    res.render(file, {
       content: recipesOnPage, // Recipes to display on the current page
       currentPage: page,
       totalPages,
@@ -170,7 +171,7 @@ app.get("/", async (req, res) => {
     const { recipesOnPage, totalPages } = paginateData(enrichedRecipes, page, recipesPerPage);
 
     // Render the main-test.ejs template
-    res.render("main-test.ejs", {
+    res.render(file, {
       content: recipesOnPage, // Recipes to display on the current page
       currentPage: page,
       totalPages,
