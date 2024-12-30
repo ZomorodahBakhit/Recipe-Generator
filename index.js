@@ -101,11 +101,36 @@ async function fetchPexelsImage(recipeTitle) {
 }
 
 
+app.get("/generate", async (req, res) => {
+  const { selectedIngredients } = req.body;
+  console.log('Received ingredients:', selectedIngredients);
 
-app.get("/submit", async (req, res) => {
+  // Process the ingredients (e.g., save to a database)
+  if (selectedIngredients && selectedIngredients.length > 0) {
+      res.status(200).send({ message: 'Ingredients received successfully', ingredients: selectedIngredients });
+  } else {
+      res.status(400).send({ message: 'No ingredients provided' });
+  }
+});
+
+
+
+
+app.post("/generate", async (req, res) => {
   try {
     // Fetch recipes using the external API
-    const result = await axios.get(`${API_URL}findByIngredients`, config);
+
+    const { selectedIngredients } = req.body;
+
+
+    const result = await axios.get(`${API_URL}findByIngredients`, {
+      params: {
+        apiKey: API_KEY,
+        ingredients: selectedIngredients,
+        number: 11,
+      },
+    });
+
     const recipes = result.data; // Array of recipes
 
     // Enrich recipes with image details from Pexels

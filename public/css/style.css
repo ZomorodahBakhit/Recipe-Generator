@@ -10,6 +10,17 @@
   scroll-padding-top: 2rem;
   scroll-behavior: smooth;
 }
+
+.ingredient-btn.selected {
+    background-color:#f75f1d !important; /* Orange for selected */
+    color: white;
+    
+}
+
+
+a {
+  text-decoration: none !important;
+}
 /* Some Variables */
 :root {
   --green-color: #3cb815;
