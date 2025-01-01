@@ -17,10 +17,11 @@
     
 }
 
-
 a {
   text-decoration: none !important;
 }
+
+
 /* Some Variables */
 :root {
   --green-color: #3cb815;
@@ -153,6 +154,8 @@ header {
   margin-bottom: 1rem;
   margin-top: 20px; /* Increased space above the h1 */
 }
+
+
 
 .btn {
   padding: 0.6rem 1rem;

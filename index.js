@@ -21,7 +21,9 @@ const API_KEY = process.env.API_KEY;
 const PEXELS_API_URL = "https://api.pexels.com/v1/search";
 const PEXELS_API_KEY = process.env.PEXELS_API_KEY;
 const file = "main-test.ejs";
-
+const about_file="about.ejs";
+const method_file = "method.ejs";
+const recipes_file= "recipes.ejs";
 // Configuration objects
 const config = {
   params: {
@@ -34,9 +36,10 @@ const config = {
 const defaultConfig = {
   params: {
     apiKey: API_KEY,
-    number: 2,
+    number: 11,
   },
 };
+
 
 
 
@@ -101,17 +104,7 @@ async function fetchPexelsImage(recipeTitle) {
 }
 
 
-app.get("/generate", async (req, res) => {
-  const { selectedIngredients } = req.body;
-  console.log('Received ingredients:', selectedIngredients);
 
-  // Process the ingredients (e.g., save to a database)
-  if (selectedIngredients && selectedIngredients.length > 0) {
-      res.status(200).send({ message: 'Ingredients received successfully', ingredients: selectedIngredients });
-  } else {
-      res.status(400).send({ message: 'No ingredients provided' });
-  }
-});
 
 
 
@@ -171,6 +164,71 @@ app.post("/generate", async (req, res) => {
 // Routes
 app.get("/", async (req, res) => {
   try {
+    // // Fetch random recipes from the API
+    // const result = await axios.get(`${API_URL}random`, defaultConfig);
+    // const recipes = result.data.recipes;
+
+    // // Enrich recipes with image details from Pexels
+    // const enrichedRecipes = await Promise.all(
+    //   recipes.map(async (recipe) => {
+    //     const imageDetails = await fetchPexelsImage(recipe.title); // Fetch image details
+    //     return {
+    //       ...recipe,
+    //       ...imageDetails, // Add image details to the recipe object
+    //     };
+    //   })
+    // );
+
+    // // Save enriched recipes to data.json
+    // saveDataToFile("data.json", enrichedRecipes);
+    // console.log("Enriched recipes have been saved to data.json");
+
+    // // Pagination setup
+    // const recipesPerPage = 10; // Number of recipes per page
+    // const page = parseInt(req.query.page, 10) || 1; // Default to page 1 if not specified
+    // const { recipesOnPage, totalPages } = paginateData(enrichedRecipes, page, recipesPerPage);
+
+    // // Render the main-test.ejs template
+    // res.render(file, {
+    //   content: recipesOnPage, // Recipes to display on the current page
+    //   currentPage: page,
+    //   totalPages,
+    // });
+
+    res.render(file);
+  } catch (error) {
+    console.error("Error fetching or processing recipes:", error.message);
+    res.status(500).send("An error occurred while fetching random recipes.");
+  }
+});
+
+
+
+app.get("/AboutUs", async (req, res) => {
+  try {
+   
+    res.render(about_file);
+  } catch (error) {
+    console.error("Error fetching or processing recipes:", error.message);
+    res.status(500).send("An error occurred while fetching random recipes.");
+  }
+});
+
+
+app.get("/recipe", async (req, res) => {
+  try {
+   
+    res.render(method_file);
+  } catch (error) {
+    console.error("Error fetching or processing recipes:", error.message);
+    res.status(500).send("An error occurred while fetching random recipes.");
+  }
+});
+
+
+
+app.get("/Recipes", async (req, res) => {
+  try {
     // Fetch random recipes from the API
     const result = await axios.get(`${API_URL}random`, defaultConfig);
     const recipes = result.data.recipes;
@@ -186,28 +244,26 @@ app.get("/", async (req, res) => {
       })
     );
 
-    // Save enriched recipes to data.json
-    saveDataToFile("data.json", enrichedRecipes);
-    console.log("Enriched recipes have been saved to data.json");
+   
 
     // Pagination setup
-    const recipesPerPage = 10; // Number of recipes per page
-    const page = parseInt(req.query.page, 10) || 1; // Default to page 1 if not specified
+    const recipesPerPage = 25; // Number of recipes per page
+    const page = parseInt(req.query.page, 25) || 1; // Default to page 1 if not specified
     const { recipesOnPage, totalPages } = paginateData(enrichedRecipes, page, recipesPerPage);
 
     // Render the main-test.ejs template
-    res.render(file, {
+    res.render(recipes_file, {
       content: recipesOnPage, // Recipes to display on the current page
       currentPage: page,
       totalPages,
     });
+
+    
   } catch (error) {
     console.error("Error fetching or processing recipes:", error.message);
     res.status(500).send("An error occurred while fetching random recipes.");
   }
 });
-
-
 
 
 // Start server

@@ -47,5 +47,3 @@ window.onscroll = () => {
   navbar.classList.remove('active');
 }
 
-// Ingredient Carousel section - its not working 
-

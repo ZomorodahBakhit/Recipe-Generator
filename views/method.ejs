@@ -1,0 +1,144 @@
+<!DOCTYPE html> <!-- Defines the document type as HTML -->
+<html lang="en"> <!-- Starts the HTML document and sets the language to English -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Specifies the character encoding for the document as UTF-8 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Ensures the page is rendered using the latest version of the browser -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the page responsive to different screen sizes -->
+    <title>YUMnTUM Method Page</title> <!-- Sets the title of the page shown in the browser tab -->
+    
+    <!-- Link to the external CSS file for styling -->
+    <link rel="stylesheet" href="/css/style_method.css">
+    
+    <!-- Link to Box Icons for icons used in the page -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    
+    <!-- Link to Swiper's CSS file for implementing a slider -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <!-- Navbar Section -->
+    <header>
+        <!-- Logo of the website with a rice bowl icon -->
+        <a href="#" class="logo"><i class='bx bxs-bowl-rice'></i>YUMnTUM</a>
+        
+        <!-- Menu Icon for mobile or responsive layout -->
+        <div class="bx bx-menu" id="menu-icon"></div>
+        
+        <!-- Navigation Bar with links to different sections of the page -->
+        <ul class="navbar">
+            <li><a href="/">Home</a></li> <!-- Link to the home section -->
+            <li><a href="/recipe"  class="home-active">Recipe Instructions</a></li> <!-- Link to the ingredients section -->
+            <li><a href=">Recipes">Recipes</a></li> <!-- Link to the recipes section with an active class -->
+            <li><a href="/AboutUs">About Us</a></li> <!-- Link to the about us section -->
+            <li><a href="#users">Users</a></li> <!-- Link to the users section -->
+        </ul>
+        
+        <!-- Profile section with a dropdown icon -->
+        <div class="profile">
+            <img src="/img/Users/profile.jpg" alt=""> <!-- Profile image -->
+            <span>Lila Al Fayed</span> <!-- Name of the profile -->
+            <i class='bx bx-caret-down'></i> <!-- Dropdown icon -->
+        </div>
+    </header>
+
+    <!-- Home Section with a swiper slider -->
+    <section class="home swiper" id="home">
+        <div class="swiper-wrapper">
+            <!-- Slide 1 in the Swiper carousel -->
+            <div class="swiper-slide container">
+                <!-- Text content for the home section -->
+                <div class="home-text">
+                    <span>Bon appétit</span> <!-- Subtitle text -->
+                    <h1>Rosemary Apricot<br> Sweet Potato <br>Stacks</h1> <!-- Title text -->
+                </div>
+                <!-- Image of the dish -->
+                <img src="/img/potato-dish.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Ingredients Section -->
+    <section class="ingredients swiper" id="ingredients">
+        <div class="heading">
+            <br><span>Ingredients</span> <!-- Section title -->
+            <h1><br>½ cup avocado oil<br> <!-- List of ingredients -->
+                1 tbsp Darbo apricot fruit spread<br>
+                1 tbsp maple syrup<br>
+                1 tbsp dried rosemary<br>
+                ½ tsp salt<br>
+                ¼ tsp ground ginger<br>
+                ¼ tsp granulated garlic</h1>
+        </div>
+    </section>
+
+    <!-- Method Section with the recipe instructions -->
+    <section class="method" id="method">
+        <div class="heading">
+            <br><span>Method</span><br> <!-- Section title -->
+            <h1>Preheat the oven to 375°F and spray a muffin pan with cooking spray. In a small saucepan, whisk the oil, <!-- Instructions for the recipe -->
+                apricot fruit spread, syrup, and spices. Heat over medium until warmed. Cut the sweet potato into thin
+                slices using a mandoline. In a large bowl, toss the sweet potatoes with the liquid and stack the slices
+                in the muffin pan. Bake for 40-45 minutes until the edges start to crisp. </h1>
+        </div>
+    </section>
+
+    <!-- Footer Section with links and subscription form -->
+    <section class="footer" id="footer">
+        <div class="footer-box">
+            <!-- Logo and company address -->
+            <a href="#" class="logo"><i class='bx bxs-bowl-rice'></i>YUMnTUM</a>
+            <p>Bilgi University, Emniyettepe, Kazım Karabekir St. No: 2/13, 34060 Eyüpsultan/İstanbul </p>
+            <!-- Social media links -->
+            <div class="social">
+                <a href="#"><i class='bx bxl-facebook'></i></a> <!-- Facebook link -->
+                <a href="#"><i class='bx bxl-twitter'></i></a> <!-- Twitter link -->
+                <a href="#"><i class='bx bxl-instagram'></i></a> <!-- Instagram link -->
+                <a href="#"><i class='bx bxl-youtube'></i></a> <!-- YouTube link -->
+            </div>
+        </div>
+        
+        <!-- Footer menu with additional links -->
+        <div class="footer-box">
+            <h2>Catalogue</h2>
+            <a href="/">Home</a>
+            <a href="#">Ingredients</a>
+            <a href="/Recipes">Recipes</a>
+            <a href="/AboutUs">About Us</a>
+        </div>
+        
+        <!-- Footer links for additional information -->
+        <div class="footer-box">
+            <h2>Useful Links</h2> <!-- Section title -->
+            <a href="#">Payment & Tax</a> <!-- Link to payment and tax section -->
+            <a href="#">Terms Of Use </a> <!-- Link to terms of use -->
+            <a href="#">Our Blog</a> <!-- Link to the blog -->
+            <a href="#">Policy</a> <!-- Link to policy section -->
+        </div>
+        
+        <!-- Newsletter Subscription Section -->
+        <div class="footer-box">
+            <h2>Newsletter</h2> <!-- Section title -->
+            <p>Subscribe to our <br>Email Newsletter</p> <!-- Subscription prompt -->
+            <form action=""> <!-- Form to submit email -->
+                <i class='bx bxs-envelope'></i> <!-- Envelope icon -->
+                <input type="email" name="" id="" placeholder="Enter Your Email"> <!-- Input field for the email address -->
+                <i class='bx bx-arrow-back bx-rotate-180'></i> <!-- Arrow icon for the submit button -->
+            </form>
+        </div>
+    </section>
+
+    <!-- Copyright Section -->
+    <div class="copyright">
+        <p>&#169; YUMnTUM All Rights Reserved.</p> <!-- Copyright statement -->
+    </div>
+
+    <!-- Swiper JS for enabling the slider functionality -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Link to external JavaScript file for additional functionality -->
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

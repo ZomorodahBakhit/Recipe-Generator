@@ -1,0 +1,488 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;900&display=swap"); /* Importing the Poppins font from Google Fonts */
+
+/* Universal styles applied to all elements */
+* {
+  font-family: "Poppins", sans-serif; /* Sets Poppins as the default font for the entire document */
+  margin: 0; /* Removes the default margin */
+  padding: 0; /* Removes the default padding */
+  box-sizing: border-box; /* Ensures that padding and border are included in the element's total width and height */
+  list-style: none; /* Removes bullet points from lists */
+  text-decoration: none; /* Removes underlines from links */
+  scroll-padding-top: 2rem; /* Adds padding for smooth scrolling */
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+/* Custom variables for colors */
+:root {
+  --green-color: #3cb815; /* Defines a green color */
+  --light-green-color: #c0eb7b; /* Defines a light green color */
+  --orange-color: #ff7e00; /* Defines an orange color */
+  --light-orange-color: #f75f1d; /* Defines a light orange color */
+  --text-color: #1a2428; /* Defines a text color */
+  --bg-color: #fff; /* Defines a background color (white) */
+}
+
+/* Custom Scroll Bar */
+::-webkit-scrollbar {
+  width: 0.5rem; /* Defines the width of the scrollbar */
+  background: var(--light-green-color); /* Sets the background color of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  width: 0.5rem; /* Defines the width of the scrollbar thumb */
+  background: var(--green-color); /* Sets the color of the scrollbar thumb */
+  border-radius: 5rem; /* Makes the scrollbar thumb rounded */
+}
+
+/* Section padding */
+section {
+  padding: 4.5rem 0 1.5rem; /* Adds padding to sections */
+}
+
+img {
+  width: 100%; /* Makes images responsive, filling the container's width */
+}
+
+body {
+  background: url('/img/background.png') no-repeat center center fixed; /* Sets a fixed background image */
+  background-size: cover; /* Ensures the background image covers the entire viewport */
+  color: var(--text-color); /* Sets the text color */
+}
+
+/* Header styles */
+header {
+  position: fixed; /* Fixes the header at the top of the page */
+  width: 100%; /* Ensures the header spans the full width of the page */
+  top: 0; /* Positions the header at the top */
+  right: 0; /* Aligns the header to the right */
+  z-index: 1000; /* Ensures the header stays on top of other elements */
+  display: flex; /* Flexbox for aligning header elements */
+  align-items: center; /* Vertically centers the header content */
+  justify-content: space-between; /* Distributes space between the logo and navbar */
+  background: var(--bg-color); /* Sets the background color of the header */
+  box-shadow: 0 8px 11px rgb(14 55 54 / 15%); /* Adds a shadow to the header */
+  padding: 20px 100px; /* Adds padding inside the header */
+  transition: 0.5s; /* Smooth transition for any changes */
+}
+
+/* Profile section inside header */
+.profile {
+  display: flex; /* Flexbox for aligning profile image and name */
+  align-items: center; /* Vertically centers the items */
+  column-gap: 0.5rem; /* Adds space between the profile image and name */
+  cursor: pointer; /* Makes the profile section clickable */
+}
+
+.profile img {
+  width: 40px; /* Sets the width of the profile image */
+  height: 40px; /* Sets the height of the profile image */
+  object-fit: cover; /* Ensures the image covers the container */
+  object-position: center; /* Centers the image */
+  border-radius: 50%; /* Makes the image circular */
+}
+
+.profile span {
+  font-size: 13px; /* Sets the font size for the profile name */
+  font-weight: 500; /* Sets the font weight */
+}
+
+/* Logo styles */
+.logo {
+  display: flex; /* Flexbox for aligning the logo */
+  align-items: center; /* Vertically centers the logo text and icon */
+  font-size: 1.1rem; /* Sets the font size for the logo */
+  font-weight: 600; /* Sets the font weight for the logo */
+  color: var(--text-color); /* Sets the logo text color */
+  column-gap: 0.5rem; /* Adds space between the logo text and icon */
+}
+
+.logo .bx {
+  font-size: 24px; /* Sets the size of the icon */
+  color: var(--orange-color); /* Sets the color of the icon */
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex; /* Flexbox for the navbar items */
+  column-gap: 0.5rem; /* Adds space between navbar items */
+}
+
+.navbar a {
+  font-size: 1rem; /* Sets the font size of the navbar links */
+  font-weight: 500; /* Sets the font weight of the navbar links */
+  color: var(--text-color); /* Sets the text color for the navbar links */
+  padding: 0.5rem 1rem; /* Adds padding inside the navbar links */
+}
+
+.navbar a:hover,
+.navbar .home-active {
+  background: var(--green-color); /* Changes the background color on hover or when active */
+  border-radius: 5rem; /* Rounds the corners of the navbar links */
+  color: var(--bg-color); /* Changes the text color when active or hovered */
+  transition: background 0.5s; /* Smooth transition for background color */
+}
+
+/* Menu icon for mobile */
+#menu-icon {
+  font-size: 24px; /* Sets the font size of the menu icon */
+  cursor: pointer; /* Makes the menu icon clickable */
+  z-index: 10001; /* Ensures the menu icon stays on top */
+  display: none; /* Hides the menu icon by default */
+}
+
+/* Container for home section */
+.container {
+  position: relative; /* Positions the container relative to its parent */
+  width: 100%; /* Makes the container take full width */
+  min-height: 640px; /* Sets a minimum height for the container */
+  display: flex; /* Flexbox for aligning content inside the container */
+  align-items: center; /* Vertically centers the content */
+  background-repeat: no-repeat; /* Ensures the background image does not repeat */
+  background-size: cover; /* Ensures the background image covers the entire container */
+  background-position: center; /* Centers the background image */
+  overflow: hidden; /* Hides any overflowing content */
+}
+
+.container img {
+  width: 600px; /* Sets the width of the image */
+  position: absolute; /* Positions the image absolutely within the container */
+  bottom: 50px; /* Moves the image upwards */
+  right: 200px; /* Moves the image to the left */
+}
+
+/* Text in the home section */
+.home-text {
+  padding: 200px 150px; /* Adds padding around the text */
+}
+
+.home-text span {
+  font-weight: 400; /* Sets the font weight */
+  text-transform: uppercase; /* Makes the text uppercase */
+  color: var(--green-color); /* Sets the color of the span text */
+  margin-top: 30px; /* Adds space above the span */
+  font-size: 1.2rem; /* Sets the font size of the span */
+}
+
+/* Heading in the home section */
+.home-text h1 {
+  font-size: 2.4rem; /* Sets the font size of the heading */
+  font-weight: 700; /* Sets the font weight */
+  margin-bottom: 1.5rem; /* Adds space below the heading */
+  margin-top: 20px; /* Adds space above the heading */
+}
+
+/* Heading for other sections */
+.heading {
+  display: flex; /* Flexbox for aligning heading elements */
+  justify-content: space-between; /* Distributes space between the text */
+  margin-left: 150px; /* Adds left margin */
+  display: block; /* Ensures proper alignment of child elements */
+}
+
+.heading span {
+  font-weight: 400; /* Sets the font weight */
+  text-transform: uppercase; /* Makes the text uppercase */
+  color: var(--green-color); /* Sets the color of the span */
+  font-size: 2rem; /* Sets the font size */
+  margin-top: 20px; /* Adds space above the span */
+  display: block; /* Makes the span a block element */
+}
+
+/* Heading for the text under the span */
+.heading h1 {
+  font-size: 1.2rem; /* Sets the font size */
+  font-weight: 400; /* Sets the font weight */
+  margin-left: 100; /* Adds left margin */
+}
+
+.method {
+  max-width: 700px; /* Sets the maximum width of the method section */
+  margin-left: 0px; /* Removes any left margin */
+}
+
+/* Footer styles */
+.footer {
+  max-width: 968px; /* Sets the maximum width of the footer */
+  margin-left: auto; /* Centers the footer horizontally */
+  margin-right: auto; /* Centers the footer horizontally */
+  display: grid; /* Uses grid layout for the footer */
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto)); /* Defines the columns in the footer */
+  gap: 1.5rem; /* Adds gap between the columns */
+  margin-top: 2rem; /* Adds top margin */
+  background: #fef4ea; /* Sets the background color */
+  border-radius: 0.5rem; /* Rounds the corners of the footer */
+  padding: 20px; /* Adds padding inside the footer */
+}
+
+.footer-box {
+  display: flex; /* Flexbox for aligning elements inside the footer box */
+  flex-direction: column; /* Stacks the elements vertically */
+}
+
+.footer-box p {
+  font-size: 0.938rem; /* Sets the font size */
+  margin: 0.5rem 0 1rem; /* Adds margin */
+}
+
+/* Social media icons inside the footer */
+.social {
+  display: flex; /* Flexbox for aligning the social media icons */
+  align-items: center; /* Vertically centers the icons */
+  column-gap: 0.5rem; /* Adds space between the icons */
+}
+
+.social .bx {
+  padding: 10px; /* Adds padding inside the icons */
+  background: var(--bg-color); /* Sets the background color of the icons */
+  color: var(--green-color); /* Sets the color of the icons */
+  border-radius: 5rem; /* Rounds the corners of the icons */
+  font-size: 20px; /* Sets the font size */
+}
+
+/* Hover effect for social media icons */
+.social .bx:hover {
+  background: var(--green-color); /* Changes the background color on hover */
+  color: var(--bg-color); /* Changes the icon color on hover */
+  transition: 0.2s all linear; /* Adds a transition effect */
+}
+/* Footer heading styling */
+.footer-box h2 {
+  font-size: 1.1rem; /* Sets the font size for the footer headings */
+  font-weight: 600; /* Sets the font weight for the footer headings */
+  margin-bottom: 1rem; /* Adds space below the footer headings */
+}
+
+/* Footer links styling */
+.footer-box a {
+  color: #868a92; /* Sets the color of the footer links */
+  margin-bottom: 1rem; /* Adds space below the footer links */
+}
+
+.footer-box a:hover {
+  color: var(--light-orange-color); /* Changes link color on hover */
+}
+
+/* Footer form styling */
+.footer-box form {
+  border-bottom: 1px solid var(--text-color); /* Adds a bottom border to the form */
+  padding: 10px; /* Adds padding inside the form */
+  display: flex; /* Uses Flexbox for layout */
+  align-items: center; /* Vertically centers the form items */
+  column-gap: 0.5rem; /* Adds spacing between form items */
+}
+
+.footer-box form input {
+  background: transparent; /* Makes the input background transparent */
+  border: none; /* Removes the border of the input */
+  outline: none; /* Removes the outline of the input */
+}
+
+/* Footer form icon styling */
+.footer-box form .bx {
+  font-size: 20px; /* Sets the font size for the form icon */
+  color: var(--light-orange-color); /* Sets the color for the form icon */
+  cursor: pointer; /* Changes cursor to a pointer on hover */
+}
+
+/* Footer form envelope icon styling */
+.footer-box form .bxs-envelope {
+  color: var(--green-color); /* Sets the color of the envelope icon */
+}
+
+/* Copyright section styling */
+.copyright {
+  text-align: center; /* Centers the text in the copyright section */
+  padding: 20px; /* Adds padding inside the copyright section */
+}
+
+/* Making Responsive */
+
+/* Styling for devices with width up to 1080px */
+@media (max-width: 1080px) {
+  header {
+    padding: 18px 60px; /* Adjusts padding in the header */
+  }
+
+  .home-text {
+    padding: 0 100px; /* Adjusts padding in the home text section */
+  }
+
+  .container img {
+    right: 100px; /* Adjusts image position */
+  }
+}
+
+/* Styling for devices with width up to 991px */
+@media (max-width: 991px) {
+  header {
+    padding: 18px 4%; /* Adjusts padding in the header */
+  }
+
+  section {
+    padding: 50px 4%; /* Adjusts padding in sections */
+  }
+
+  .home-text h1 {
+    font-size: 2rem; /* Reduces the font size for the home text */
+  }
+
+  .home-text {
+    padding: 0 5%; /* Adjusts padding in the home text section */
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    margin: 0; /* Removes margin for swiper buttons */
+  }
+}
+
+/* Styling for devices with width up to 852px */
+@media (max-width: 852px) {
+  header {
+    padding: 12px 4%; /* Adjusts padding in the header */
+  }
+
+  #menu-icon {
+    display: initial; /* Displays the menu icon */
+  }
+
+  .navbar {
+    position: absolute; /* Makes the navbar position absolute */
+    top: -570px; /* Moves the navbar off-screen */
+    left: 0; /* Aligns the navbar to the left */
+    right: 0; /* Aligns the navbar to the right */
+    display: flex; /* Uses Flexbox for layout */
+    flex-direction: column; /* Stacks navbar items vertically */
+    background: var(--bg-color); /* Sets the navbar background color */
+    box-shadow: 4px 4px 0 4px rgb(14 55 54 / 15%); /* Adds a shadow to the navbar */
+    transition: 0.2s all linear; /* Smooth transition effect for navbar */
+    text-align: left; /* Aligns navbar links to the left */
+  }
+
+  .navbar a {
+    padding: 1rem; /* Adds padding to navbar links */
+    margin: 1rem; /* Adds margin to navbar links */
+    display: block; /* Ensures navbar links are block-level elements */
+  }
+
+  .navbar a:hover,
+  .navbar .home-active {
+    border-radius: 00.5rem; /* Rounds the corners of navbar links */
+    color: var(--bg-color); /* Changes text color on hover */
+  }
+
+  .navbar.active {
+    top: 100%; /* Moves the navbar down when active */
+  }
+
+  .home-text h1 {
+    font-size: 1.7rem; /* Reduces the font size for home text */
+  }
+
+  .container imng {
+    width: 390px; /* Reduces the width of the container image */
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem; /* Adjusts padding for buttons */
+  }
+
+  .method-conatiner {
+    grid-template-columns: repeat(auto-fit, minmax(244px, auto)); /* Adjusts grid layout */
+  }
+}
+
+/* Styling for devices with width up to 712px */
+@media (max-width: 712px) {
+  .container img {
+    right: 20px; /* Adjusts image position */
+  }
+
+  .heading h1 {
+    font-size: 1.2rem; /* Reduces the font size for the heading */
+  }
+
+  .about {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, auto)); /* Adjusts the grid layout */
+  }
+
+  .about img {
+    order: 2; /* Changes the order of the image */
+  }
+
+  .about-text {
+    text-align: center; /* Centers the text */
+    display: flex; /* Uses Flexbox for layout */
+    flex-direction: column; /* Stacks the items vertically */
+    align-items: center; /* Aligns items horizontally */
+    justify-content: center; /* Centers the items vertically */
+  }
+
+  .btn {
+    max-width: 164px; /* Sets a maximum width for buttons */
+  }
+
+  .users h2 {
+    font-size: 1.2rem; /* Reduces the font size for user headings */
+  }
+}
+
+/* Styling for devices with width up to 642px */
+@media (max-width: 642px) {
+  .container img {
+    right: 0; /* Aligns the image to the right */
+    width: 370px; /* Reduces the width of the container image */
+  }
+}
+
+/* Styling for devices with width up to 546px */
+@media (max-width: 546px) {
+  .container img {
+    right: 0; /* Aligns the image to the right */
+    width: 370px; /* Reduces the width of the container image */
+    height: 820px; /* Adjusts the height of the container image */
+    object-fit: contain; /* Ensures the image fits within its container */
+  }
+}
+
+/* Styling for devices with width up to 370px */
+@media (max-width: 370px) {
+  .logo {
+    font-size: 1rem; /* Reduces the font size for the logo */
+  }
+
+  .profile img {
+    width: 30px; /* Reduces the width of the profile image */
+    height: 30px; /* Reduces the height of the profile image */
+  }
+
+  .profile span {
+    font-size: 10px; /* Reduces the font size for the profile text */
+  }
+
+  .home-text {
+    padding-bottom: 17rem; /* Adjusts padding for smaller screens */
+  }
+
+  .home-text span {
+    font-size: 0.8rem; /* Reduces the font size for the span */
+  }
+
+  .home-text h1 {
+    font-size: 1.4rem; /* Reduces the font size for the main title */
+  }
+
+  .heading {
+    flex-direction: column; /* Stacks the heading items vertically */
+    text-align: center; /* Centers the text */
+  }
+
+  .heading .btn {
+    margin-top: 1rem; /* Adds space above the button */
+  }
+
+  .ingredients-conatiner {
+    gap: 1.5rem; /* Adds spacing between ingredients */
+  }
+}

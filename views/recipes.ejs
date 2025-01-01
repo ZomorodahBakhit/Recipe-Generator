@@ -1,0 +1,146 @@
+<!DOCTYPE html> <!-- Declares the document type as HTML5 -->
+<html lang="en"> <!-- Starts the HTML document, specifies language as English -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Sets the character encoding to UTF-8 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Ensures compatibility with older versions of Internet Explorer -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the page responsive to the viewport width -->
+    <title>YUMnTUM Recipes Page</title> <!-- Sets the title of the page shown in the browser tab -->
+    <!-- Link To CSS -->
+    <link rel="stylesheet" href="/css/style_recipes.css"> <!-- Links to the external CSS file for styling -->
+    <!-- Box Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"> <!-- Links to BoxIcons for icons -->
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> <!-- Links to Swiper's CSS for image slides -->
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <a href="#" class="logo"><i class='bx bxs-bowl-rice'></i>YUMnTUM</a> <!-- Logo link with an icon and text -->
+        <!-- Menu Icon  -->
+        <div class="bx bx-menu" id="menu-icon"></div> <!-- Menu icon for toggling the navbar -->
+        <!-- Nav List -->
+        <ul class="navbar">
+            <li><a href="/">Home</a></li> <!-- Home link -->
+            <li><a href="#ingredients">Ingredients</a></li> <!-- Ingredients link -->
+            <li><a href="/Recipes" class="home-active">Recipes</a></li> <!-- Recipes link with active class -->
+            <li><a href="/AboutUs">About Us</a></li> <!-- About Us link -->
+            <li><a href="#users">Users</a></li> <!-- Users link -->
+        </ul>
+        <!-- Profile -->
+        <div class="profile">
+            <img src="/img/Users/profile.jpg" alt=""> <!-- Profile image -->
+            <span>Lila Al Fayed</span> <!-- Profile name -->
+            <i class='bx bx-caret-down'></i> <!-- Dropdown icon -->
+        </div>
+    </header>
+    <!-- Home -->
+    <section class="home swiper" id="home"> <!-- Home section with Swiper class for slider -->
+        <div class="swiper-wrapper"> <!-- Swiper wrapper for containing slides -->
+            <!-- Slide 1 -->
+            <div class="swiper-slide container"> <!-- Slide container -->
+                <div class="home-text"> <!-- Text container for home section -->
+                    <span>"If you are what you eat, then I only want<br>to eat the good stuff."<cite> – Remy</cite></span> <!-- Quote text with citation -->
+                    <h1>Choose any Recipe <br>Savor every Bite! <br></h1> <!-- Heading with recipe message -->
+                </div>
+                <img src="/img/recipeshomepage.png" alt=""> <!-- Image for the home section -->
+            </div>
+    </section>
+
+    <!-- Recipes Section -->
+    <section class="recipes" id="recipes">
+        <!-- Heading -->
+        <div class="heading">
+            <h1>Our Popular <br><span>Recipes</span></h1>
+            
+        </div>
+    
+        <% if (locals.content) { %>
+        <!-- Recipes Content -->
+        <div class="recipes-container">
+            <% content.forEach((recipe) => { %>
+            <!-- Recipe Box -->
+            <div class="box">
+                <img src="<%= recipe.imageUrl || '/img/recipes/recipe1.png' %>" alt="<%= recipe.title %> Image">
+                <span>Breakfast, Lunch, Dinner</span>
+                <h2><%= recipe.title %></h2>
+                <a href="#" class="recipes-btn">Get Recipe</a>
+                <i class="bx bx-heart"></i>
+                <span class="popular">Popular Item</span>
+            </div>
+            <% }); %>
+        </div>
+    
+        <!-- Pagination -->
+        <div class="pagination">
+            <% for (let i = 1; i <= totalPages; i++) { %>
+            <a href="?page=<%= i %>" class="pagination-btn <%= i === currentPage ? 'active' : '' %>">
+                <%= i %>
+            </a>
+            <% } %>
+        </div>
+        <% } %>
+    </section>
+
+
+    <section>
+        <div class="see-all-btn">
+            <button type="button" class="btn side-btn" >See All<i
+                    class='bx bx-right-arrow-alt'></i></button>
+        </div>
+    </section>
+    
+
+
+
+
+
+    <!-- Footer -->
+    <section class="footer" id="footer"> <!-- Footer section -->
+        <div class="footer-box"> <!-- Footer box 1 -->
+            <a href="#" class="logo"><i class='bx bxs-bowl-rice'></i>YUMnTUM</a> <!-- Logo link with icon and text -->
+            <p>Bilgi University, Emniyettepe, Kazım Karabekir St. No: 2/13, 34060 Eyüpsultan/İstanbul </p> <!-- Footer address -->
+            <div class="social"> <!-- Social media links -->
+                <a href="#"><i class='bx bxl-facebook'></i></a> <!-- Facebook icon link -->
+                <a href="#"><i class='bx bxl-twitter'></i></a> <!-- Twitter icon link -->
+                <a href="#"><i class='bx bxl-instagram'></i></a> <!-- Instagram icon link -->
+                <a href="#"><i class='bx bxl-youtube'></i></a> <!-- YouTube icon link -->
+            </div>
+        </div>
+        <div class="footer-box">
+            <h2>Catalogue</h2>
+            <a href="/">Home</a>
+            <a href="#">Ingredients</a>
+            <a href="/Recipes">Recipes</a>
+            <a href="/AboutUs">About Us</a>
+        </div>
+        <div class="footer-box"> <!-- Footer box 3 -->
+            <h2>Useful Links</h2> <!-- Useful Links heading -->
+            <a href="#">Payment & Tax</a> <!-- Link to Payment & Tax page -->
+            <a href="#">Terms Of Use </a> <!-- Link to Terms Of Use page -->
+            <a href="#">Our Blog</a> <!-- Link to Blog page -->
+            <a href="#">Policy</a> <!-- Link to Policy page -->
+        </div>
+        <div class="footer-box"> <!-- Footer box 4 -->
+            <h2>Newsletter</h2> <!-- Newsletter heading -->
+            <p>Subscribe to our <br>Email Newsletter</p> <!-- Subscription prompt -->
+            <form action=""> <!-- Newsletter form -->
+                <i class='bx bxs-envelope'></i> <!-- Envelope icon -->
+                <input type="email" name="" id="" placeholder="Enter Your Email"> <!-- Email input field -->
+                <i class='bx bx-arrow-back bx-rotate-180'></i> <!-- Submit icon -->
+            </form>
+        </div>
+    </section>
+    <!-- Copyright -->
+    <div class="copyright"> <!-- Copyright section -->
+        <p>&#169; YUMnTUM All Rights Reserved.</p> <!-- Copyright text -->
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> <!-- Links to Swiper JS -->
+    <!-- Link To JS -->
+    <script src="/js/main.js"></script> <!-- Links to the external JS file -->
+</body>
+
+</html>

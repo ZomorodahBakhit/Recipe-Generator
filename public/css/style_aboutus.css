@@ -1,0 +1,867 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;900&display=swap");
+
+/* Universal Styles */
+* {
+  font-family: "Poppins", sans-serif; /* Applies the Poppins font to all elements */
+  margin: 0; /* Resets margin to 0 for all elements */
+  padding: 0; /* Resets padding to 0 for all elements */
+  box-sizing: border-box; /* Ensures padding and border are included in element’s total width/height */
+  list-style: none; /* Removes bullet points from lists */
+  text-decoration: none; /* Removes underline from links */
+  scroll-padding-top: 2rem; /* Adds padding to the top of scroll areas */
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+/* Defining Variables for Colors */
+:root {
+  --green-color: #3cb815; /* Green color variable */
+  --light-green-color: #c0eb7b; /* Light green color variable */
+  --orange-color: #ff7e00; /* Orange color variable */
+  --light-orange-color: #f75f1d; /* Light orange color variable */
+  --text-color: #1a2428; /* Text color variable */
+  --bg-color: #fff; /* Background color variable */
+}
+
+/* Custom Scroll Bar Styles */
+::-webkit-scrollbar {
+  width: 0.5rem; /* Sets the width of the scrollbar */
+  background: var(--light-green-color); /* Sets background color of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  width: 0.5rem; /* Sets the width of the thumb (slider part of the scrollbar) */
+  background: var(--green-color); /* Sets the color of the scrollbar thumb */
+  border-radius: 5rem; /* Rounds the corners of the scrollbar thumb */
+}
+
+/* Section Styles */
+section {
+  padding: 4.5rem 0 1.5rem; /* Adds padding to the section: top, bottom */
+}
+
+/* Image Styles */
+img {
+  width: 100%; /* Makes all images take up 100% of their parent container's width */
+}
+
+/* Body Styles */
+body {
+  background: url('/img/background.png') no-repeat center center fixed; /* Sets a fixed background image */
+  background-size: cover; /* Ensures the image covers the entire viewport */
+  color: var(--text-color); /* Sets the text color for the body */
+}
+
+/* Header Styles */
+header {
+  position: fixed; /* Fixes the header to the top of the viewport */
+  width: 100%; /* Makes the header span the entire width */
+  top: 0; /* Positions the header at the top */
+  right: 0; /* Aligns the header to the right */
+  z-index: 1000; /* Ensures the header stays above other elements */
+  display: flex; /* Uses flexbox layout for the header */
+  align-items: center; /* Vertically aligns items in the header */
+  justify-content: space-between; /* Spaces out the elements within the header */
+  background: var(--bg-color); /* Sets the background color of the header */
+  box-shadow: 0 8px 11px rgb(14 55 54 / 15%); /* Adds a subtle shadow under the header */
+  padding: 20px 100px; /* Adds padding inside the header */
+  transition: 0.5s; /* Smooth transition effect for the header */
+}
+
+/* Profile Section */
+.profile {
+  display: flex; /* Uses flexbox layout for profile */
+  align-items: center; /* Vertically aligns profile items */
+  column-gap: 0.5rem; /* Adds space between profile image and text */
+  cursor: pointer; /* Makes the profile section clickable */
+}
+
+.profile img {
+  width: 40px; /* Sets the width of the profile image */
+  height: 40px; /* Sets the height of the profile image */
+  object-fit: cover; /* Ensures the image covers the box without distortion */
+  object-position: center; /* Centers the image inside the container */
+  border-radius: 50%; /* Makes the profile image circular */
+}
+
+.profile span {
+  font-size: 13px; /* Sets the font size of the profile text */
+  font-weight: 500; /* Sets the font weight for the profile text */
+}
+
+/* Logo Section */
+.logo {
+  display: flex; /* Uses flexbox layout for the logo */
+  align-items: center; /* Vertically aligns logo items */
+  font-size: 1.1rem; /* Sets the font size for the logo */
+  font-weight: 600; /* Makes the logo text bold */
+  color: var(--text-color); /* Sets the logo text color */
+  column-gap: 0.5rem; /* Adds space between the logo and the icon */
+}
+
+.logo .bx {
+  font-size: 24px; /* Sets the size of the logo icon */
+  color: var(--orange-color); /* Sets the icon color */
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex; /* Uses flexbox layout for the navbar */
+  column-gap: 0.5rem; /* Adds space between navbar items */
+}
+
+.navbar a {
+  font-size: 1rem; /* Sets the font size for navbar links */
+  font-weight: 500; /* Makes navbar links moderately bold */
+  color: var(--text-color); /* Sets the navbar link color */
+  padding: 0.5rem 1rem; /* Adds padding around navbar links */
+}
+
+.navbar a:hover,
+.navbar .home-active {
+  background: var(--green-color); /* Changes background on hover or for active links */
+  border-radius: 5rem; /* Rounds the corners of the active or hovered links */
+  color: var(--bg-color); /* Changes text color to background color */
+  transition: background 0.5s; /* Smooth background color transition */
+}
+
+/* Menu Icon Styles */
+#menu-icon {
+  font-size: 24px; /* Sets the size of the menu icon */
+  cursor: pointer; /* Changes cursor to pointer for interactivity */
+  z-index: 10001; /* Ensures the menu icon stays above other elements */
+  display: none; /* Hides the menu icon by default */
+}
+
+/* Container Styles */
+.container {
+  position: relative; /* Allows absolute positioning of child elements */
+  width: 100%; /* Makes the container take up 100% of the parent width */
+  min-height: 640px; /* Sets a minimum height for the container */
+  display: flex; /* Uses flexbox layout for the container */
+  align-items: center; /* Vertically aligns items in the container */
+  background-repeat: no-repeat; /* Prevents background image from repeating */
+  background-size: cover; /* Ensures the background image covers the container */
+  background-position: center; /* Centers the background image */
+  overflow: hidden; /* Hides anything outside the container's boundaries */
+}
+
+.container img {
+  width: 500px; /* Sets the width of the image inside the container */
+  position: absolute; /* Absolutely positions the image within the container */
+  bottom: 20px; /* Moves the image up from the bottom */
+  right: 230px; /* Moves the image to the left */
+}
+
+/* Home Text Section */
+.home-text {
+  padding: 200px 150px; /* Adds increased padding to the home text */
+}
+
+.home-text span {
+  font-weight: 400; /* Sets the font weight to normal */
+  text-transform: uppercase; /* Transforms the text to uppercase */
+  color: var(--green-color); /* Sets the text color to green */
+  margin-top: 30px; /* Adds space above the span */
+  font-size: 1.2rem; /* Sets the font size of the span */
+}
+
+.home-text h1 {
+  font-size: 2.4rem; /* Sets the font size of the heading */
+  font-weight: 700; /* Makes the heading bold */
+  margin-bottom: 1rem; /* Adds space below the heading */
+  margin-top: 20px; /* Adds space above the heading */
+}
+
+/* Button styles */
+.btn {
+  padding: 0.6rem 1rem; /* Padding inside the button */
+  background: var(--green-color); /* Background color using the green variable */
+  color: var(--bg-color); /* Text color using the background color variable */
+  font-weight: 400; /* Font weight of the text inside the button */
+  border-radius: 5rem; /* Rounded corners */
+  display: flex; /* Display as a flex container */
+  align-items: center; /* Vertically center the items */
+  justify-content: space-between; /* Space between the items */
+  column-gap: 0.5rem; /* Space between elements in the button */
+  max-width: 160px; /* Maximum width for the button */
+}
+
+/* Icon inside the button */
+.btn .bx {
+  padding: 4px; /* Padding around the icon */
+  background: var(--bg-color); /* Background color of the icon */
+  color: var(--text-color); /* Icon color */
+  border-radius: 1rem; /* Rounded corners of the icon */
+  font-size: 20px; /* Font size for the icon */
+  margin: auto; /* Center the icon horizontally */
+}
+
+/* Hover effect for the button */
+.btn:hover {
+  background: var(--light-orange-color); /* Background color on hover */
+  transition: 0.2s ease; /* Smooth transition for background */
+}
+
+/* Swiper Navigation Button Styles */
+.swiper-button-next {
+  background: url(img/right-arrow.png); /* Right arrow icon */
+  background-repeat: no-repeat; /* Prevent icon from repeating */
+  background-size: 100% auto; /* Scale the icon to fit the button */
+  background-position: center; /* Center the icon */
+  margin-right: 20px; /* Right margin */
+}
+
+.swiper-button-next::after {
+  display: none; /* Hide the default text for next button */
+}
+
+/* Left arrow button styles */
+.swiper-button-prev {
+  background: url(img/left-arrow.png); /* Left arrow icon */
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  margin-left: 20px; /* Left margin */
+}
+
+.swiper-button-prev::after {
+  display: none; /* Hide the default text for prev button */
+}
+
+/* Heading styles */
+.heading {
+  display: flex; /* Flexbox layout */
+  justify-content: space-between; /* Space between items */
+  align-items: center; /* Center items vertically */
+}
+
+.heading h1 {
+  font-size: 1.6rem; /* Font size for the heading */
+  font-weight: 600; /* Font weight */
+}
+
+.heading span {
+  color: var(--green-color); /* Text color for span */
+}
+
+/* Swiper ingredients styling */
+.ingredients {
+  max-width: 968px; /* Maximum width of the ingredients container */
+  margin: auto; /* Center the container */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.ingredients .swiper-wrapper {
+  display: flex; /* Display swiper items in a row */
+  width: 100%; /* Full width */
+}
+
+.ingredients .swiper-slide {
+  display: flex; /* Flex container for each slide */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  padding: 20px; /* Padding inside each slide */
+  border-radius: 0.5rem; /* Rounded corners */
+  transition: transform 0.3s ease; /* Smooth scaling effect */
+  width: 20%; /* Each slide takes 20% of the width */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Hover effect for swiper slides */
+.ingredients .swiper-slide:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.ingredients .swiper-slide img {
+  width: 100%; /* Image takes full width of the slide */
+  height: 100px; /* Fixed height for images */
+  object-fit: contain; /* Ensure the image fits the box */
+}
+
+.ingredients .swiper-slide h2 {
+  font-size: 1rem; /* Font size for the heading */
+  font-weight: 600; /* Font weight */
+  margin-top: 0.5rem; /* Margin above the heading */
+}
+
+.ingredients .swiper-slide span {
+  font-size: 0.8rem; /* Font size for the span */
+  font-weight: 400; /* Font weight */
+}
+
+.ingredients .swiper-slide .bx {
+  padding: 10px; /* Padding around the icon */
+  background: var(--green-color); /* Green background */
+  color: var(--bg-color); /* White icon color */
+  border-radius: 5rem; /* Rounded icon */
+  margin-top: 1rem; /* Space between icon and the text above */
+  display: block; /* Display the icon as a block */
+}
+
+/* Custom background colors for each box */
+.box1 {
+  background: #fef4ea; /* Light yellow */
+}
+
+.box2 {
+  background: #e9f4e3; /* Light green */
+}
+
+.box3 {
+  background: #faeaea; /* Light pink */
+}
+
+.box4 {
+  background: #eeeef9; /* Light purple */
+}
+
+.box5 {
+  background: #f7f6d7; /* Light beige */
+}
+
+.box6 {
+  background: #fef4ea; /* Light yellow */
+}
+
+.box7 {
+  background: #e9f4e3; /* Light green */
+}
+
+.box8 {
+  background: #faeaea; /* Light pink */
+}
+
+.box9 {
+  background: #eeeef9; /* Light purple */
+}
+
+.box10 {
+  background: #f7f6d7; /* Light beige */
+}
+
+/* Swiper Navigation Button styles */
+.ingredients .swiper-button-next,
+.ingredients .swiper-button-prev {
+  color: var(--green-color); /* Green color for navigation buttons */
+  font-size: 1.5rem; /* Font size for buttons */
+  transition: color 0.3s ease; /* Transition for color change */
+}
+
+.ingredients .swiper-button-next:hover,
+.ingredients .swiper-button-prev:hover {
+  color: var(--light-orange-color); /* Change color on hover */
+}
+
+/* Ingredients button styles */
+.ingredients-btn {
+  padding: 0.6rem 1rem; /* Padding inside the button */
+  background: var(--green-color); /* Green background */
+  color: var(--bg-color); /* White text color */
+  font-weight: 400; /* Normal font weight */
+  border-radius: 5rem; /* Rounded corners */
+  display: flex; /* Flex container */
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Space between items */
+  column-gap: 0.5rem; /* Space between items */
+  width: 122.5px; /* Fixed width */
+  float: right; /* Float the button to the right */
+  margin-right: 277px; /* Right margin */
+  margin-top: 20px; /* Top margin */
+}
+
+/* Icon inside the ingredients button */
+.ingredients-btn .bx {
+  padding: 4px; /* Padding around the icon */
+  background: var(--bg-color); /* White background */
+  color: var(--text-color); /* Dark text color */
+  border-radius: 1rem; /* Rounded icon */
+  font-size: 20px; /* Font size for the icon */
+  margin: auto; /* Center the icon */
+}
+
+/* Hover effect for the ingredients button */
+.ingredients-btn:hover {
+  background: var(--light-orange-color); /* Change background on hover */
+  transition: 0.2s ease; /* Smooth transition */
+}
+
+/* Recipes section styles */
+.recipes {
+  max-width: 968px; /* Maximum width */
+  margin-left: auto; /* Centering horizontally */
+  margin-right: auto; /* Centering horizontally */
+}
+
+/* Recipe container with grid layout */
+.recipes-conatiner {
+  display: grid; /* Grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(260px, auto)); /* Auto-adjust columns */
+  gap: 1.5rem; /* Gap between items */
+  margin-top: 2rem; /* Top margin */
+}
+
+/* Box for each recipe */
+.recipes-conatiner .box {
+  padding: 20px; /* Padding inside the box */
+  box-shadow: 1px 2px 11px 4px rgb(14 55 54 / 15%); /* Shadow for the box */
+  border-radius: 0.5rem; /* Rounded corners */
+  position: relative; /* Positioned relative to its container */
+}
+
+/* Recipe image styles */
+.recipes-conatiner .box img {
+  width: 100%; /* Image takes full width of the box */
+  height: 200px; /* Fixed height for the image */
+  object-fit: contain; /* Fit image without distortion */
+  object-position: center; /* Center the image */
+}
+
+/* Recipe title styles */
+.recipes-conatiner .box span {
+  font-weight: 500; /* Medium font weight */
+  font-size: 13px; /* Font size */
+}
+
+/* Recipe heading styles */
+.recipes-conatiner .box h2 {
+  font-size: 1.2rem; /* Font size for the heading */
+  font-weight: 600; /* Font weight */
+  margin-bottom: 30px; /* Space below the heading */
+}
+
+/* Recipe button inside each box */
+.recipes-conatiner .box .recipes-btn {
+  position: absolute; /* Positioned at the bottom */
+  bottom: 10px; /* 10px from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center using transform */
+  padding: 0.6rem 1rem; /* Padding inside the button */
+  background: var(--green-color); /* Green background */
+  color: var(--bg-color); /* White text color */
+  border-radius: 5rem; /* Rounded corners */
+  font-size: 1rem; /* Font size */
+  font-weight: 400; /* Normal font weight */
+  display: flex; /* Flex layout */
+  align-items: center; /* Center the icon vertically */
+  justify-content: center; /* Center the text horizontally */
+  max-width: 160px; /* Maximum width */
+  cursor: pointer; /* Cursor changes to pointer */
+  transition: 0.3s ease; /* Smooth transition */
+  margin-top: 20px; /* Top margin */
+}
+
+/* Hover effect for recipe button */
+.recipes-conatiner .box .recipe-btn:hover {
+  background: var(--light-orange-color); /* Change background on hover */
+  color: var(--green-color); /* Change text color on hover */
+}
+
+/* Heart icon styling */
+.recipes-conatiner .box .bx-heart {
+  position: absolute; /* Positioned at the top right */
+  top: 1rem; /* 1rem from the top */
+  right: 1rem; /* 1rem from the right */
+  font-size: 20px; /* Font size */
+  color: var(--light-orange-color); /* Color */
+}
+
+/* Popular tag styles */
+.recipes-conatiner .box .popular {
+  position: absolute; /* Positioned at the top left */
+  top: 1rem; /* 1rem from the top */
+  left: 0; /* Align to the left */
+  background: var(--light-orange-color); /* Background color */
+  color: var(--bg-color); /* Text color */
+  padding: 4px 18px; /* Padding inside the tag */
+  clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 0 100%, 0% 50%, 0 0); /* Custom shape */
+}
+
+/* About section styles */
+.about {
+  max-width: 968px; /* Maximum width */
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto; /* Center horizontally */
+  display: grid; /* Grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(21rem, auto)); /* Auto-adjust columns */
+  align-items: center; /* Center items vertically */
+  gap: 1.5rem; /* Gap between items */
+}
+
+/* About text styles */
+.about-text span {
+  font-weight: 600; /* Font weight */
+  text-transform: uppercase; /* Uppercase text */
+  color: var(--green-color); /* Green text */
+  font-size: 1.2rem; /* Font size */
+}
+
+.about-text p {
+  margin: 0.5rem 0 1rem; /* Top, bottom margin */
+  font-size: 1rem; /* Font size */
+}
+
+/* Users section styles */
+.users {
+  max-width: 968px; /* Maximum width */
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto; /* Center horizontally */
+}
+
+.users h2 {
+  text-align: center; /* Centered heading */
+  font-size: 1.6rem; /* Font size */
+  font-weight: 600; /* Font weight */
+}
+
+/* Users container grid layout */
+.users-container {
+  display: grid; /* Grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(280px, auto)); /* Auto-adjust columns */
+  gap: 1.5rem; /* Gap between items */
+  margin-top: 2rem; /* Top margin */
+}
+
+/* Box for each user review */
+.users-container .box {
+  padding: 20px; /* Padding inside the box */
+  box-shadow: 1px 2px 11px 4px rgb(14 55 54 / 15%); /* Box shadow */
+  border-radius: 0.5rem; /* Rounded corners */
+  border-bottom: 7px solid var(--green-color); /* Green border at the bottom */
+}
+
+/* Hover effect for user box */
+.users-container .box:hover {
+  transform: translateY(10px); /* Slight lift effect */
+  transition: 0.2s all linear; /* Smooth transition */
+}
+
+/* Icon inside the user box */
+.users-container .box .bx {
+  font-size: 24px; /* Font size */
+  color: var(--green-color); /* Green color */
+}
+
+/* Star rating styles */
+.users-container .box .stars .bx {
+  font-size: 1rem; /* Font size */
+  color: var(--light-orange-color); /* Orange color */
+}
+
+/* Review profile styling */
+.users-container .box p {
+  font-size: 0.938rem; /* Font size */
+}
+
+/* Review profile container */
+.review-profile {
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Align items vertically */
+  margin-top: 1rem; /* Top margin */
+  column-gap: 0.5rem; /* Gap between items */
+}
+
+/* Review profile image styles */
+.review-profile img {
+  width: 60px; /* Image width */
+  height: 60px; /* Image height */
+  border-radius: 50%; /* Circular image */
+  object-fit: cover; /* Ensure the image covers the container */
+  object-position: center; /* Center the image */
+}
+
+/* Review profile name styles */
+.review-profile h3 {
+  font-size: 1rem; /* Font size */
+  font-weight: 600; /* Font weight */
+}
+
+/* Footer Styling */
+.footer {
+  max-width: 968px; /* Set the maximum width of the footer */
+  margin-left: auto; /* Center the footer horizontally */
+  margin-right: auto; /* Center the footer horizontally */
+  display: grid; /* Use grid layout for footer items */
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto)); /* Create a responsive grid with columns that auto-size */
+  gap: 1.5rem; /* Space between footer items */
+  margin-top: 2rem; /* Add space above the footer */
+  background: #fef4ea; /* Set the background color of the footer */
+  border-radius: 0.5rem; /* Round the corners of the footer */
+  padding: 20px; /* Add padding inside the footer */
+}
+
+/* Footer Box Styling */
+.footer-box {
+  display: flex; /* Use flex layout for footer box items */
+  flex-direction: column; /* Arrange the footer items in a vertical column */
+}
+
+/* Footer Text Styling */
+.footer-box p {
+  font-size: 0.938rem; /* Set font size for paragraph text */
+  margin: 0.5rem 0 1rem; /* Add margins to the paragraph */
+}
+
+/* Social Media Icons Styling */
+.social {
+  display: flex; /* Use flex layout for social icons */
+  align-items: center; /* Align social icons vertically */
+  column-gap: 0.5rem; /* Add space between social icons */
+}
+
+/* Social Icon Styling */
+.social .bx {
+  padding: 10px; /* Add padding inside the social icons */
+  background: var(--bg-color); /* Set background color of the icon */
+  color: var(--green-color); /* Set text color of the icon */
+  border-radius: 5rem; /* Round the corners of the icon */
+  font-size: 20px; /* Set font size for the icon */
+}
+
+/* Social Icon Hover Styling */
+.social .bx:hover {
+  background: var(--green-color); /* Change background on hover */
+  color: var(--bg-color); /* Change text color on hover */
+  transition: 0.2s all linear; /* Smooth transition effect for the hover state */
+}
+
+/* Footer Box Header Styling */
+.footer-box h2 {
+  font-size: 1.1rem; /* Set font size for h2 tags in footer box */
+  font-weight: 600; /* Set font weight to bold */
+  margin-bottom: 1rem; /* Add space below the header */
+}
+
+/* Footer Link Styling */
+.footer-box a {
+  color: #868a92; /* Set link color */
+  margin-bottom: 1rem; /* Add margin below links */
+}
+
+/* Footer Link Hover Styling */
+.footer-box a:hover {
+  color: var(--light-orange-color); /* Change link color on hover */
+}
+
+/* Footer Form Styling */
+.footer-box form {
+  border-bottom: 1px solid var(--text-color); /* Add a bottom border to the form */
+  padding: 10px; /* Add padding inside the form */
+  display: flex; /* Use flex layout for the form items */
+  align-items: center; /* Align form items vertically */
+  column-gap: 0.5rem; /* Space between form items */
+}
+
+/* Form Input Styling */
+.footer-box form input {
+  background: transparent; /* Make background transparent */
+  border: none; /* Remove border */
+  outline: none; /* Remove outline */
+}
+
+/* Form Icon Styling */
+.footer-box form .bx {
+  font-size: 20px; /* Set font size for form icon */
+  color: var(--light-orange-color); /* Set icon color */
+  cursor: pointer; /* Set cursor to pointer on hover */
+}
+
+/* Specific Icon Color */
+.footer-box form .bxs-envelope {
+  color: var(--green-color); /* Change icon color */
+}
+
+/* Copyright Styling */
+.copyright {
+  text-align: center; /* Center the text */
+  padding: 20px; /* Add padding inside the copyright section */
+}
+
+/* Media Query for screens less than or equal to 1080px */
+@media (max-width: 1080px) {
+  header {
+    padding: 18px 60px; /* Adjust header padding */
+  }
+
+  .home-text {
+    padding: 0 100px; /* Adjust padding for home-text */
+  }
+
+  .container img {
+    right: 100px; /* Adjust image position */
+  }
+}
+
+/* Media Query for screens less than or equal to 991px */
+@media (max-width: 991px) {
+  header {
+    padding: 18px 4%; /* Adjust header padding */
+  }
+
+  section {
+    padding: 50px 4%; /* Adjust section padding */
+  }
+
+  .home-text h1 {
+    font-size: 2rem; /* Reduce font size for h1 in home-text */
+  }
+
+  .home-text {
+    padding: 0 5%; /* Adjust padding for home-text */
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    margin: 0; /* Remove margin for swiper buttons */
+  }
+}
+
+/* Media Query for screens less than or equal to 852px */
+@media (max-width: 852px) {
+  header {
+    padding: 12px 4%; /* Adjust header padding */
+  }
+
+  #menu-icon {
+    display: initial; /* Show menu icon */
+  }
+
+  .navbar {
+    position: absolute; /* Position navbar absolutely */
+    top: -570px; /* Position navbar off-screen initially */
+    left: 0; /* Align navbar to left */
+    right: 0; /* Align navbar to right */
+    display: flex; /* Use flex layout for navbar */
+    flex-direction: column; /* Arrange navbar items vertically */
+    background: var(--bg-color); /* Set background color */
+    box-shadow: 4px 4px 0 4px rgb(14 55 54 / 15%); /* Add shadow to navbar */
+    transition: 0.2s all linear; /* Smooth transition */
+    text-align: left; /* Align text to the left */
+  }
+
+  .navbar a {
+    padding: 1rem; /* Add padding to navbar links */
+    margin: 1rem; /* Add margin between navbar links */
+    display: block; /* Display navbar links as block */
+  }
+
+  .navbar a:hover,
+  .navbar .home-active {
+    border-radius: 00.5rem; /* Round corners on hover */
+    color: var(--bg-color); /* Change text color */
+  }
+
+  .navbar.active {
+    top: 100%; /* Make navbar appear on-screen */
+  }
+
+  .home-text h1 {
+    font-size: 1.7rem; /* Adjust font size for smaller screens */
+  }
+
+  .container img {
+    width: 390px; /* Adjust image width */
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem; /* Adjust button padding */
+  }
+
+  .recipes-conatiner {
+    grid-template-columns: repeat(auto-fit, minmax(244px, auto)); /* Adjust grid layout for recipes */
+  }
+}
+
+/* Media Query for screens less than or equal to 712px */
+@media (max-width: 712px) {
+  .container img {
+    right: 20px; /* Adjust image position */
+  }
+
+  .heading h1 {
+    font-size: 1.2rem; /* Reduce font size for h1 */
+  }
+
+  .about {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, auto)); /* Adjust grid layout for about section */
+  }
+
+  .about img {
+    order: 2; /* Adjust order of image in about section */
+  }
+
+  .about-text {
+    text-align: center; /* Center text in about-text */
+    display: flex; /* Use flex layout for about-text */
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center; /* Center items */
+    justify-content: center; /* Center items vertically */
+  }
+
+  .btn {
+    max-width: 164px; /* Adjust max-width for buttons */
+  }
+
+  .users h2 {
+    font-size: 1.2rem; /* Adjust font size for user section heading */
+  }
+}
+
+/* Media Query for screens less than or equal to 642px */
+@media (max-width: 642px) {
+  .container img {
+    right: 0; /* Adjust image position */
+    width: 370px; /* Adjust image width */
+  }
+}
+
+/* Media Query for screens less than or equal to 546px */
+@media (max-width: 546px) {
+  .container img {
+    right: 0; /* Adjust image position */
+    width: 370px; /* Adjust image width */
+    height: 820px; /* Adjust image height */
+    object-fit: contain; /* Maintain aspect ratio */
+  }
+}
+
+/* Media Query for screens less than or equal to 370px */
+@media (max-width: 370px) {
+  .logo {
+    font-size: 1rem; /* Reduce font size for logo */
+  }
+
+  .profile img {
+    width: 30px; /* Adjust profile image size */
+    height: 30px; /* Adjust profile image size */
+  }
+
+  .profile span {
+    font-size: 10px; /* Reduce font size for profile span */
+  }
+
+  .home-text {
+    padding-bottom: 17rem; /* Add padding below home-text */
+  }
+
+  .home-text span {
+    font-size: 0.8rem; /* Adjust font size for home-text span */
+  }
+
+  .home-text h1 {
+    font-size: 1.4rem; /* Reduce font size for h1 */
+  }
+
+  .heading {
+    flex-direction: column; /* Arrange heading items vertically */
+    text-align: center; /* Center align text */
+  }
+
+  .heading .btn {
+    margin-top: 1rem; /* Add margin to the top of the button */
+  }
+
+  .ingredients-conatiner {
+    gap: 1.5rem; /* Adjust gap between items */
+  }
+}

@@ -1,0 +1,580 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;900&display=swap");
+
+/* Universal Styles for All Elements */
+* {
+  font-family: "Poppins", sans-serif; /* Apply Poppins font to all elements */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  box-sizing: border-box; /* Includes padding and border in the element’s total width and height */
+  list-style: none; /* Removes default list styling */
+  text-decoration: none; /* Removes text underline */
+  scroll-padding-top: 2rem; /* Adds padding to the top during scrolling */
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+/* Some Variables for Colors */
+:root {
+  --green-color: #3cb815; /* Primary green color */
+  --light-green-color: #c0eb7b; /* Light green color */
+  --orange-color: #ff7e00; /* Primary orange color */
+  --light-orange-color: #f75f1d; /* Light orange color */
+  --text-color: #1a2428; /* Text color */
+  --bg-color: #fff; /* Background color */
+}
+
+/* Custom Scroll Bar Styling */
+::-webkit-scrollbar {
+  width: 0.5rem; /* Width of the scrollbar */
+  background: var(--light-green-color); /* Background color of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  width: 0.5rem; /* Width of the thumb */
+  background: var(--green-color); /* Thumb color */
+  border-radius: 5rem; /* Rounded corners for the thumb */
+}
+
+/* Section Styling */
+section {
+  padding: 4.5rem 0 1.5rem; /* Padding for sections */
+}
+
+/* Image Styling */
+img {
+  width: 100%; /* Makes images stretch to fit their containers */
+}
+
+/* Body Styling */
+body {
+  color: var(--text-color); /* Text color for the body */
+}
+
+/* Header Styling */
+header {
+  position: fixed; /* Fixes the header at the top */
+  width: 100%; /* Makes the header take full width */
+  top: 0; /* Positions it at the top */
+  right: 0; /* Aligns it to the right */
+  z-index: 1000; /* Ensures header stays on top of other elements */
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Aligns items vertically */
+  justify-content: space-between; /* Spaces out elements */
+  background: var(--bg-color); /* White background */
+  box-shadow: 0 8px 11px rgb(14 55 54 / 15%); /* Adds shadow to the header */
+  padding: 20px 100px; /* Padding inside the header */
+  transition: 0.5s; /* Smooth transition for header changes */
+}
+
+/* Profile Section Styling */
+.profile {
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Aligns items vertically */
+  column-gap: 0.5rem; /* Adds space between profile image and text */
+  cursor: pointer; /* Cursor turns into pointer when hovering */
+}
+
+.profile img {
+  width: 40px; /* Sets profile image width */
+  height: 40px; /* Sets profile image height */
+  object-fit: cover; /* Ensures image covers the area without distortion */
+  object-position: center; /* Centers the image within the box */
+  border-radius: 50%; /* Makes the image circular */
+}
+
+.profile span {
+  font-size: 13px; /* Font size for the profile name */
+  font-weight: 500; /* Medium font weight */
+}
+
+/* Logo Section Styling */
+.logo {
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Aligns items vertically */
+  font-size: 1.1rem; /* Font size for logo */
+  font-weight: 600; /* Semi-bold font weight */
+  color: var(--text-color); /* Logo text color */
+  column-gap: 0.5rem; /* Adds space between logo text and icon */
+}
+
+.logo .bx {
+  font-size: 24px; /* Icon size */
+  color: var(--orange-color); /* Icon color */
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex; /* Flexbox layout */
+  column-gap: 0.5rem; /* Space between navbar items */
+}
+
+.navbar a {
+  font-size: 1rem; /* Font size for navbar links */
+  font-weight: 500; /* Medium font weight */
+  color: var(--text-color); /* Link text color */
+  padding: 0.5rem 1rem; /* Padding inside the links */
+}
+
+.navbar a:hover,
+.navbar .home-active {
+  background: var(--green-color); /* Background color on hover or active state */
+  border-radius: 5rem; /* Rounded corners */
+  color: var(--bg-color); /* White text color */
+  transition: background 0.5s; /* Smooth background transition */
+}
+
+/* Menu Icon for Mobile */
+#menu-icon {
+  font-size: 24px; /* Icon size */
+  cursor: pointer; /* Pointer cursor on hover */
+  z-index: 10001; /* Ensures menu icon stays on top */
+  display: none; /* Hides the menu icon by default */
+}
+
+/* Container for the Background Image */
+.container {
+  position: relative; /* Allows positioning of child elements */
+  width: 100%; /* Full width */
+  min-height: 640px; /* Minimum height for the container */
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Centers items vertically */
+  background: url(/img/background.png); /* Background image */
+  background-repeat: no-repeat; /* Prevents image repetition */
+  background-size: cover; /* Makes the background image cover the entire container */
+  background-position: center; /* Centers the background image */
+  overflow: hidden; /* Hides overflowing content */
+}
+
+/* Image inside the Container */
+.container img {
+  width: 600px; /* Width of the image */
+  position: absolute; /* Absolute positioning for the image */
+  bottom: -30px; /* Moves the image up */
+  right: 200px; /* Moves the image to the left */
+}
+
+/* Home Text Section */
+.home-text {
+  padding: 200px 150px; /* Padding around the text */
+}
+
+.home-text span {
+  font-weight: 400; /* Normal font weight */
+  text-transform: uppercase; /* Uppercase text */
+  color: var(--green-color); /* Green text color */
+  margin-top: 30px; /* Adds space between the span and the previous element */
+  font-size: 1.2rem; /* Sets the font size of the span */
+}
+
+.home-text h1 {
+  font-size: 2.4rem; /* Font size for the heading */
+  font-weight: 700; /* Bold font weight */
+  margin-bottom: 1rem; /* Adds space below the heading */
+  margin-top: 20px; /* Adds space above the heading */
+}
+
+/* Heading Section */
+.heading {
+  display: flex; /* Flexbox layout */
+  justify-content: space-between; /* Spacing between elements */
+  align-items: center; /* Centers items vertically */
+}
+
+.heading h1 {
+  font-size: 1.6rem; /* Font size for the heading */
+  font-weight: 600; /* Semi-bold font weight */
+}
+
+.heading span {
+  color: var(--green-color); /* Green text color for the span */
+}
+
+/* Recipes Section */
+.recipes {
+  max-width: 968px; /* Maximum width for the recipes section */
+  margin-left: auto; /* Centers the section horizontally */
+  margin-right: auto; /* Centers the section horizontally */
+}
+
+/* Recipes Container */
+.recipes-container {
+  display: grid; /* Grid layout for the recipes */
+  grid-template-columns: repeat(auto-fit, minmax(260px, auto)); /* Dynamic grid column sizes */
+  gap: 1.5rem; /* Gap between grid items */
+  margin-top: 2rem; /* Adds space above the container */
+}
+
+/* Individual Recipe Box */
+.recipes-container .box {
+  padding: 20px; /* Padding inside the box */
+  box-shadow: 1px 2px 11px 4px rgb(14 55 54 / 15%); /* Shadow around the box */
+  border-radius: 0.5rem; /* Rounded corners */
+  position: relative; /* Allows absolute positioning of children */
+}
+
+/* Recipe Image */
+.recipes-container .box img {
+  width: 100%; /* Makes the image stretch to fit the box */
+  height: 200px; /* Sets image height */
+  object-fit: contain; /* Ensures image fits within box without distortion */
+  object-position: center; /* Centers the image inside the box */
+}
+
+/* Recipe Title */
+.recipes-container .box span {
+  font-weight: 500; /* Medium font weight */
+  font-size: 13px; /* Font size */
+}
+
+/* Recipe Heading */
+.recipes-container .box h2 {
+  font-size: 1.2rem; /* Font size for the heading */
+  font-weight: 600; /* Semi-bold font weight */
+  margin-bottom: 30px; /* Adds space below the heading */
+}
+
+/* Recipe Button */
+.recipes-container .box .recipes-btn {
+  position: absolute; /* Absolute positioning */
+  bottom: 10px; /* Places the button at the bottom */
+  left: 50%; /* Centers the button horizontally */
+  transform: translateX(-50%); /* Corrects the centering */
+  padding: 0.6rem 1rem; /* Padding inside the button */
+  background: var(--green-color); /* Green background */
+  color: var(--bg-color); /* White text color */
+  border-radius: 5rem; /* Rounded corners */
+  font-size: 1rem; /* Font size */
+  font-weight: 400; /* Normal font weight */
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Centers items vertically */
+  justify-content: center; /* Centers items horizontally */
+  max-width: 160px; /* Maximum width */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: 0.3s ease; /* Smooth transition */
+  margin-top: 20px; /* Adds space above the button */
+}
+
+.recipes-container .box .recipe-btn:hover {
+  background: var(--light-orange-color); /* Changes background color on hover */
+  color: var(--green-color); /* Changes text color on hover */
+}
+
+/* Heart Icon */
+.recipes-container .box .bx-heart {
+  position: absolute; /* Absolute positioning */
+  top: 1rem; /* Places it at the top */
+  right: 1rem; /* Aligns it to the right */
+  font-size: 20px; /* Icon size */
+  color: var(--light-orange-color); /* Icon color */
+}
+
+/* Popular Tag */
+.recipes-container .box .popular {
+  position: absolute; /* Absolute positioning */
+  top: 1rem; /* Places it at the top */
+  left: 0; /* Aligns it to the left */
+  background: var(--light-orange-color); /* Light orange background */
+  color: var(--bg-color); /* White text color */
+  padding: 4px 18px; /* Padding inside the tag */
+  clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 0 100%, 0% 50%, 0 0); /* Shapes the tag */
+}
+
+
+
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.pagination-btn {
+  padding: 10px 15px;
+  border: 1px solid var(--green-color);
+  border-radius: 5px;
+  background-color: var(--bg-color);
+  color: var(--green-color);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.pagination-btn:hover {
+  background-color: var(--green-color);
+  color: var(--bg-color);
+}
+
+.pagination-btn.active {
+  background-color: var(--light-orange-color);
+  color: var(--bg-color);
+  font-weight: bold;
+}
+
+.footer {
+  max-width: 968px; /* Sets a maximum width for the footer */
+  margin-left: auto; /* Centers the footer horizontally */
+  margin-right: auto; /* Centers the footer horizontally */
+  display: grid; /* Creates a grid layout for the footer */
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto)); /* Adjusts the number of columns based on the container width */
+  gap: 1.5rem; /* Adds spacing between grid items */
+  margin-top: 2rem; /* Adds spacing above the footer */
+  background: #fef4ea; /* Sets the background color */
+  border-radius: 0.5rem; /* Rounds the corners of the footer */
+  padding: 20px; /* Adds padding inside the footer */
+}
+
+.footer-box {
+  display: flex; /* Aligns items in a flexible layout */
+  flex-direction: column; /* Stacks items vertically */
+}
+
+.footer-box p {
+  font-size: 0.938rem; /* Sets the font size for paragraphs */
+  margin: 0.5rem 0 1rem; /* Adds space above and below the paragraphs */
+}
+
+.social {
+  display: flex; /* Aligns items in a flexible layout */
+  align-items: center; /* Vertically centers the items */
+  column-gap: 0.5rem; /* Adds spacing between the items */
+}
+
+.social .bx {
+  padding: 10px; /* Adds padding around the social icon */
+  background: var(--bg-color); /* Sets the icon background color */
+  color: var(--green-color); /* Sets the icon color */
+  border-radius: 5rem; /* Rounds the icon */
+  font-size: 20px; /* Sets the icon size */
+}
+
+.social .bx:hover {
+  background: var(--green-color); /* Changes the background color on hover */
+  color: var(--bg-color); /* Changes the icon color on hover */
+  transition: 0.2s all linear; /* Adds a smooth transition effect */
+}
+
+.footer-box h2 {
+  font-size: 1.1rem; /* Sets the font size for the heading */
+  font-weight: 600; /* Makes the heading bold */
+  margin-bottom: 1rem; /* Adds space below the heading */
+}
+
+.footer-box a {
+  color: #868a92; /* Sets the link color */
+  margin-bottom: 1rem; /* Adds space below the links */
+}
+
+.footer-box a:hover {
+  color: var(--light-orange-color); /* Changes the link color on hover */
+}
+
+.footer-box form {
+  border-bottom: 1px solid var(--text-color); /* Adds a border below the form */
+  padding: 10px; /* Adds padding inside the form */
+  display: flex; /* Aligns items in a flexible layout */
+  align-items: center; /* Vertically centers the items */
+  column-gap: 0.5rem; /* Adds spacing between the items */
+}
+
+.footer-box form input {
+  background: transparent; /* Removes the input background color */
+  border: none; /* Removes the input border */
+  outline: none; /* Removes the outline on focus */
+}
+
+.footer-box form .bx {
+  font-size: 20px; /* Sets the icon size */
+  color: var(--light-orange-color); /* Sets the icon color */
+  cursor: pointer; /* Changes the cursor to a pointer */
+}
+
+.footer-box form .bxs-envelope {
+  color: var(--green-color); /* Sets the envelope icon color */
+}
+
+.copyright {
+  text-align: center; /* Centers the text */
+  padding: 20px; /* Adds padding inside the section */
+}
+/* Making Responsive */
+@media (max-width: 1080px) {
+  header {
+    padding: 18px 60px; /* Adjusts header padding for smaller screens */
+  }
+
+  .home-text {
+    padding: 0 100px; /* Reduces horizontal padding for the home-text section */
+  }
+
+  .container img {
+    right: 100px; /* Moves the image 100px from the right */
+  }
+}
+
+@media (max-width: 991px) {
+  header {
+    padding: 18px 4%; /* Further reduces header padding */
+  }
+
+  section {
+    padding: 50px 4%; /* Adds consistent padding for all sections */
+  }
+
+  .home-text h1 {
+    font-size: 2rem; /* Reduces the font size of the main heading */
+  }
+
+  .home-text {
+    padding: 0 5%; /* Adjusts horizontal padding for home-text */
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    margin: 0; /* Removes any margin from swiper navigation buttons */
+  }
+}
+
+@media (max-width: 852px) {
+  header {
+    padding: 12px 4%; /* Minimizes header padding */
+  }
+
+  #menu-icon {
+    display: initial; /* Makes the menu icon visible for smaller screens */
+  }
+
+  .navbar {
+    position: absolute; /* Positions the navbar relative to the viewport */
+    top: -570px; /* Moves it off-screen initially */
+    left: 0;
+    right: 0;
+    display: flex; /* Enables flexbox for navbar links */
+    flex-direction: column; /* Stacks links vertically */
+    background: var(--bg-color); /* Sets navbar background color */
+    box-shadow: 4px 4px 0 4px rgb(14 55 54 / 15%); /* Adds a shadow to the navbar */
+    transition: 0.2s all linear; /* Smoothens navbar appearance/disappearance */
+    text-align: left; /* Aligns text to the left */
+  }
+
+  .navbar a {
+    padding: 1rem; /* Adds padding around navbar links */
+    margin: 1rem; /* Adds spacing between navbar links */
+    display: block; /* Ensures links are block-level elements */
+  }
+
+  .navbar a:hover,
+  .navbar .home-active {
+    border-radius: 0.5rem; /* Rounds the corners of active or hovered links */
+    color: var(--bg-color); /* Changes link color */
+  }
+
+  .navbar.active {
+    top: 100%; /* Displays the navbar on activation */
+  }
+
+  .home-text h1 {
+    font-size: 1.7rem; /* Reduces the font size for smaller screens */
+  }
+
+  .container imng {
+    width: 390px; /* Restricts the width of images */
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem; /* Adjusts padding for buttons */
+  }
+
+  .recipes-conatiner {
+    grid-template-columns: repeat(auto-fit, minmax(244px, auto)); /* Adjusts the grid column size */
+  }
+}
+
+@media (max-width: 712px) {
+  .container img {
+    right: 20px; /* Moves the image closer to the right */
+  }
+
+  .heading h1 {
+    font-size: 1.2rem; /* Reduces the font size of headings */
+  }
+
+  .about {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, auto)); /* Adjusts the grid layout for the about section */
+  }
+
+  .about img {
+    order: 2; /* Places the image below the text */
+  }
+
+  .about-text {
+    text-align: center; /* Centers the text in the about section */
+    display: flex; /* Enables flexbox for text alignment */
+    flex-direction: column; /* Stacks content vertically */
+    align-items: center; /* Centers content horizontally */
+    justify-content: center; /* Centers content vertically */
+  }
+
+  .btn {
+    max-width: 164px; /* Restricts button width */
+  }
+
+  .users h2 {
+    font-size: 1.2rem; /* Reduces the font size for user headings */
+  }
+}
+
+@media (max-width: 642px) {
+  .container img {
+    right: 0; /* Aligns the image to the right */
+    width: 370px; /* Adjusts image width */
+  }
+}
+
+@media (max-width: 546px) {
+  .container img {
+    right: 0; /* Aligns the image to the right */
+    width: 370px; /* Sets a fixed image width */
+    height: 820px; /* Adjusts the height of the image */
+    object-fit: contain; /* Ensures the entire image fits within its container */
+  }
+}
+
+@media (max-width: 370px) {
+  .logo {
+    font-size: 1rem; /* Reduces the font size of the logo */
+  }
+
+  .profile img {
+    width: 30px; /* Shrinks profile images */
+    height: 30px; /* Shrinks profile images */
+  }
+
+  .profile span {
+    font-size: 10px; /* Reduces the font size for profile text */
+  }
+
+  .home-text {
+    padding-bottom: 17rem; /* Adds padding below the home-text section */
+  }
+
+  .home-text span {
+    font-size: 0.8rem; /* Reduces the font size for subheadings */
+  }
+
+  .home-text h1 {
+    font-size: 1.4rem; /* Reduces the main heading size */
+  }
+
+  .heading {
+    flex-direction: column; /* Stacks heading content vertically */
+    text-align: center; /* Centers the heading text */
+  }
+
+  .heading .btn {
+    margin-top: 1rem; /* Adds spacing above buttons */
+  }
+
+  .ingredients-conatiner {
+    gap: 1.5rem; /* Adjusts spacing between ingredients */
+  }
+}
