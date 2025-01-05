@@ -53,7 +53,7 @@ npm install
 ### 4. Start the Application  
 Run the following command to start the server:  
 ```bash  
-npm start  
+npx nodemon index.js
 ```  
 
 ---
