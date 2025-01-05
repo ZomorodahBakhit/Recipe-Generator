@@ -103,7 +103,7 @@ npm start
 
 ---
 
-Feel free to reach out if you encounter any issues or have suggestions for improvement! 😊  
+Feel free to reach out if you encounter any issues or have suggestions for improvement! 😊 
+
 ``` 
 
-You can copy and paste this directly into your `README.md` file. It is formatted correctly for Markdown rendering!
