@@ -153,8 +153,15 @@ header {
 
 /* Text in the home section */
 .home-text {
-  padding: 200px 150px; /* Adds padding around the text */
+  text-align: left;
+  max-width: 90%;
+  margin: 0 auto;
+  position: relative; /* Position relative for stacking context */
+  padding-top: 5rem; /* Add padding to avoid overlapping with the header */
 }
+
+
+
 
 .home-text span {
   font-weight: 400; /* Sets the font weight */

@@ -138,7 +138,7 @@ header {
   min-height: 640px; /* Minimum height for the container */
   display: flex; /* Flexbox layout */
   align-items: center; /* Centers items vertically */
-  background: url(/img/background.png); /* Background image */
+  background: url(img/background.png); /* Background image */
   background-repeat: no-repeat; /* Prevents image repetition */
   background-size: cover; /* Makes the background image cover the entire container */
   background-position: center; /* Centers the background image */
@@ -197,7 +197,7 @@ header {
 }
 
 /* Recipes Container */
-.recipes-container {
+.recipes-conatiner {
   display: grid; /* Grid layout for the recipes */
   grid-template-columns: repeat(auto-fit, minmax(260px, auto)); /* Dynamic grid column sizes */
   gap: 1.5rem; /* Gap between grid items */
@@ -205,7 +205,7 @@ header {
 }
 
 /* Individual Recipe Box */
-.recipes-container .box {
+.recipes-conatiner .box {
   padding: 20px; /* Padding inside the box */
   box-shadow: 1px 2px 11px 4px rgb(14 55 54 / 15%); /* Shadow around the box */
   border-radius: 0.5rem; /* Rounded corners */
@@ -213,7 +213,7 @@ header {
 }
 
 /* Recipe Image */
-.recipes-container .box img {
+.recipes-conatiner .box img {
   width: 100%; /* Makes the image stretch to fit the box */
   height: 200px; /* Sets image height */
   object-fit: contain; /* Ensures image fits within box without distortion */
@@ -221,22 +221,20 @@ header {
 }
 
 /* Recipe Title */
-.recipes-container .box span {
+.recipes-conatiner .box span {
   font-weight: 500; /* Medium font weight */
   font-size: 13px; /* Font size */
 }
 
 /* Recipe Heading */
-.recipes-container .box h2 {
-  margin-bottom: 50px; /* Adds space to push the title upward */
-  text-align: center; /* Aligns title properly */
-  font-size: 1.2rem; /* Adjust size if needed */
-  line-height: 1.5; /* Improves readability */
-  overflow-wrap: break-word; /* Ensures long titles wrap within the container */
+.recipes-conatiner .box h2 {
+  font-size: 1.2rem; /* Font size for the heading */
+  font-weight: 600; /* Semi-bold font weight */
+  margin-bottom: 30px; /* Adds space below the heading */
 }
 
 /* Recipe Button */
-.recipes-container .box .recipes-btn {
+.recipes-conatiner .box .recipes-btn {
   position: absolute; /* Absolute positioning */
   bottom: 10px; /* Places the button at the bottom */
   left: 50%; /* Centers the button horizontally */
@@ -256,13 +254,13 @@ header {
   margin-top: 20px; /* Adds space above the button */
 }
 
-.recipes-container .box .recipe-btn:hover {
+.recipes-conatiner .box .recipe-btn:hover {
   background: var(--light-orange-color); /* Changes background color on hover */
   color: var(--green-color); /* Changes text color on hover */
 }
 
 /* Heart Icon */
-.recipes-container .box .bx-heart {
+.recipes-conatiner .box .bx-heart {
   position: absolute; /* Absolute positioning */
   top: 1rem; /* Places it at the top */
   right: 1rem; /* Aligns it to the right */
@@ -271,7 +269,7 @@ header {
 }
 
 /* Popular Tag */
-.recipes-container .box .popular {
+.recipes-conatiner .box .popular {
   position: absolute; /* Absolute positioning */
   top: 1rem; /* Places it at the top */
   left: 0; /* Aligns it to the left */
@@ -281,36 +279,6 @@ header {
   clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 0 100%, 0% 50%, 0 0); /* Shapes the tag */
 }
 
-
-
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  gap: 10px;
-}
-
-.pagination-btn {
-  padding: 10px 15px;
-  border: 1px solid var(--green-color);
-  border-radius: 5px;
-  background-color: var(--bg-color);
-  color: var(--green-color);
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.pagination-btn:hover {
-  background-color: var(--green-color);
-  color: var(--bg-color);
-}
-
-.pagination-btn.active {
-  background-color: var(--light-orange-color);
-  color: var(--bg-color);
-  font-weight: bold;
-}
 
 .footer {
   max-width: 968px; /* Sets a maximum width for the footer */

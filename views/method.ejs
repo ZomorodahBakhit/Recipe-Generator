@@ -5,7 +5,7 @@
     <meta charset="UTF-8"> <!-- Specifies the character encoding for the document as UTF-8 -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Ensures the page is rendered using the latest version of the browser -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the page responsive to different screen sizes -->
-    <title>YUMnTUM Method Page</title> <!-- Sets the title of the page shown in the browser tab -->
+    <title>YUMnTUM Recipe Instructions Page</title> <!-- Sets the title of the page shown in the browser tab -->
     
     <!-- Link to the external CSS file for styling -->
     <link rel="stylesheet" href="/css/style_method.css">
@@ -15,6 +15,9 @@
     
     <!-- Link to Swiper's CSS file for implementing a slider -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+
+    
 </head>
 
 <body>
@@ -29,8 +32,8 @@
         <!-- Navigation Bar with links to different sections of the page -->
         <ul class="navbar">
             <li><a href="/">Home</a></li> <!-- Link to the home section -->
-            <li><a href="/recipe"  class="home-active">Recipe Instructions</a></li> <!-- Link to the ingredients section -->
-            <li><a href=">Recipes">Recipes</a></li> <!-- Link to the recipes section with an active class -->
+            <li><a href="#" class="home-active">Recipe Instructions</a></li> <!-- Link to the ingredients section -->
+            <li><a href="/Recipes">Recipes</a></li> <!-- Link to the recipes section with an active class -->
             <li><a href="/AboutUs">About Us</a></li> <!-- Link to the about us section -->
             <li><a href="#users">Users</a></li> <!-- Link to the users section -->
         </ul>
@@ -51,7 +54,13 @@
                 <!-- Text content for the home section -->
                 <div class="home-text">
                     <span>Bon appétit</span> <!-- Subtitle text -->
-                    <h1>Rosemary Apricot<br> Sweet Potato <br>Stacks</h1> <!-- Title text -->
+                    <h1 id="recipe-title">
+                        <% if (locals.recipeTitle) { %>
+                            <%= recipeTitle %>
+                        <% } else { %>
+                            Delicious Recipe
+                        <% } %>
+                    </h1>
                 </div>
                 <!-- Image of the dish -->
                 <img src="/img/potato-dish.png" alt="">
@@ -59,17 +68,36 @@
         </div>
     </section>
 
+
+
+    <script>
+        // JavaScript to break title after every three words
+        document.addEventListener("DOMContentLoaded", () => {
+            const recipeTitle = document.getElementById("recipe-title");
+            if (recipeTitle) {
+                const words = recipeTitle.innerText.split(" ");
+                const chunks = [];
+                for (let i = 0; i < words.length; i += 3) {
+                    chunks.push(words.slice(i, i + 3).join(" "));
+                }
+                recipeTitle.innerHTML = chunks.join("<br>");
+            }
+        });
+    </script>
+
     <!-- Ingredients Section -->
     <section class="ingredients swiper" id="ingredients">
         <div class="heading">
             <br><span>Ingredients</span> <!-- Section title -->
-            <h1><br>½ cup avocado oil<br> <!-- List of ingredients -->
-                1 tbsp Darbo apricot fruit spread<br>
-                1 tbsp maple syrup<br>
-                1 tbsp dried rosemary<br>
-                ½ tsp salt<br>
-                ¼ tsp ground ginger<br>
-                ¼ tsp granulated garlic</h1>
+            <h1>
+                <% if (content && content.length) { %> <!-- Check if ingredients exist -->
+                    <% content.forEach(ingredient => { %>
+                        <br><%= ingredient %> <!-- Dynamically render each ingredient -->
+                    <% }); %>
+                <% } else { %>
+                    <br>No ingredients available. <!-- Fallback message -->
+                <% } %>
+            </h1>
         </div>
     </section>
 
@@ -77,10 +105,13 @@
     <section class="method" id="method">
         <div class="heading">
             <br><span>Method</span><br> <!-- Section title -->
-            <h1>Preheat the oven to 375°F and spray a muffin pan with cooking spray. In a small saucepan, whisk the oil, <!-- Instructions for the recipe -->
-                apricot fruit spread, syrup, and spices. Heat over medium until warmed. Cut the sweet potato into thin
-                slices using a mandoline. In a large bowl, toss the sweet potatoes with the liquid and stack the slices
-                in the muffin pan. Bake for 40-45 minutes until the edges start to crisp. </h1>
+            <h1>
+                <% if (instructions) { %> <!-- Check if instructions exist -->
+                    <%- instructions %> <!-- Render instructions -->
+                <% } else { %>
+                    Instructions are currently unavailable. <!-- Fallback message -->
+                <% } %>
+            </h1>
         </div>
     </section>
 
@@ -133,6 +164,10 @@
     <div class="copyright">
         <p>&#169; YUMnTUM All Rights Reserved.</p> <!-- Copyright statement -->
     </div>
+
+
+
+    
 
     <!-- Swiper JS for enabling the slider functionality -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

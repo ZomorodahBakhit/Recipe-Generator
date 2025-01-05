@@ -480,9 +480,11 @@ header {
   font-size: 13px;
 }
 .recipes-container .box h2 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 30px; /* Adds space below the h2 */
+  margin-bottom: 50px; /* Adds space to push the title upward */
+  text-align: center; /* Aligns title properly */
+  font-size: 1.2rem; /* Adjust size if needed */
+  line-height: 1.5; /* Improves readability */
+  overflow-wrap: break-word; /* Ensures long titles wrap within the container */
 }
 .recipes-container .box .recipes-btn {
   position: absolute;

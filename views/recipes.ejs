@@ -22,8 +22,7 @@
         <div class="bx bx-menu" id="menu-icon"></div> <!-- Menu icon for toggling the navbar -->
         <!-- Nav List -->
         <ul class="navbar">
-            <li><a href="/">Home</a></li> <!-- Home link -->
-            <li><a href="#ingredients">Ingredients</a></li> <!-- Ingredients link -->
+            <li><a href="/">Home</a></li> <!-- Home link --> 
             <li><a href="/Recipes" class="home-active">Recipes</a></li> <!-- Recipes link with active class -->
             <li><a href="/AboutUs">About Us</a></li> <!-- About Us link -->
             <li><a href="#users">Users</a></li> <!-- Users link -->
@@ -57,15 +56,19 @@
         </div>
     
         <% if (locals.content) { %>
-        <!-- Recipes Content -->
+            <!-- Recipes Content -->
         <div class="recipes-container">
             <% content.forEach((recipe) => { %>
             <!-- Recipe Box -->
             <div class="box">
                 <img src="<%= recipe.imageUrl || '/img/recipes/recipe1.png' %>" alt="<%= recipe.title %> Image">
                 <span>Breakfast, Lunch, Dinner</span>
-                <h2><%= recipe.title %></h2>
-                <a href="#" class="recipes-btn">Get Recipe</a>
+                <h2><%= recipe.title%></h2>
+                <form action="/getRecipe/<%= encodeURIComponent(recipe.title) %>" method="POST">
+                    <input type="hidden" name="id" value="<%= recipe.id %>">
+                    <input type="hidden" name="title" value="<%= recipe.title %>">
+                    <button type="submit" class="recipes-btn">Get Recipe</button>
+                </form>
                 <i class="bx bx-heart"></i>
                 <span class="popular">Popular Item</span>
             </div>
@@ -84,12 +87,7 @@
     </section>
 
 
-    <section>
-        <div class="see-all-btn">
-            <button type="button" class="btn side-btn" >See All<i
-                    class='bx bx-right-arrow-alt'></i></button>
-        </div>
-    </section>
+    
     
 
 

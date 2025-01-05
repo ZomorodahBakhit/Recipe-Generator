@@ -1,4 +1,5 @@
 // Swiper
+
 var swiper = new Swiper(".home", {
   spaceBetween: 30,
   centeredSlides: true,
@@ -46,4 +47,11 @@ window.onscroll = () => {
   menu.classList.remove('bx-x');
   navbar.classList.remove('active');
 }
+
+
+
+
+
+
+
 
